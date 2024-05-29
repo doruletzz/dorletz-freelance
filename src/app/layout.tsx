@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hind, Inter, Montserrat, Pontano_Sans } from "next/font/google";
 import "./globals.css";
+import { Footer, Navbar } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+const hind = Hind({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-hind",
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={` ${montserrat.variable} ${hind.className}  scroll-smooth`}>
+      <body className={"leading-loose"}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
