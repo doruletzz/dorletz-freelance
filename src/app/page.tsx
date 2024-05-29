@@ -489,7 +489,7 @@ export default function Home() {
       <section id="testimonials" className="border-b border-black border-opacity-10 mx-72 flex flex-col gap-2 items-center text-center pb-16">
         <Chip variant="green">Testimoniale</Chip>
         <h2 className="text-3xl font-black font-display mb-2 max-w-lg">
-          Don't Take My Word?
+          Don&apos;t Take My Word?
         </h2>
         <p className="leading-normal max-w-lg opacity-75">
           Testimonialele ultimor mei clienti.
