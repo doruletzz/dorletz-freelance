@@ -7,7 +7,7 @@ const FooterComponent = () => {
   return (
     <footer
       id="footer"
-      className="mt-24 pt-16 bg-zinc-100 px-60 grid grid-cols-3 gap-6 pb-2 rounded-t-3xl mx-12"
+      className="mt-24 pt-16 bg-zinc-100 px-48 grid grid-cols-3 gap-6 pb-2 rounded-t-3xl mx-24"
     >
       <div className="flex flex-col gap-2">
         <a
@@ -63,16 +63,16 @@ const FooterComponent = () => {
           GITHUB
         </a>
         <a
-          href="https://home.nasium.coach/"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          NASIUM
-        </a>
-        <a
           href="https://x.com/dorletz"
           className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
         >
           TWITTER
+        </a>
+        <a
+          href="https://home.nasium.coach/"
+          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
+        >
+          NASIUM
         </a>
       </div>
 
