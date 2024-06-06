@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getLocale, locales } from "./utils/locales";
 
-
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
@@ -14,7 +13,6 @@ export function middleware(request: NextRequest) {
   // Redirect if there is no locale
   const locale = getLocale(request);
 
-  console.log(locale, pathname)
   request.nextUrl.pathname = `/${locale}${pathname}`;
   // e.g. incoming request is /products
   // The new URL is now /en-US/products
@@ -23,9 +21,8 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    "/((?!_next).*)",
+    "/((?!api|static|.*\\..*|_next).*)",
     // Optional: only run on root (/) URL
-    '/'
+    // "/",
   ],
 };

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Card } from ".";
 import { locales } from "@/utils/locales";
 import Link from "next/link";
+import Image from "next/image";
 
 const CTA = "Contacteaza-ma";
 const NAME = "DORU DOROS";
@@ -25,21 +26,44 @@ const NavbarComponent = ({ locale }: Props) => {
       </a>
       <a href="/#home">HOME</a>
       <a href="/#about">ABOUT</a>
-      <button style={{background: showLanguage ? '' : 'none'}} onClick={() => setShowLanguage(prev => !prev)} className="uppercase ml-auto relative transition-colors duration-300 ease-in-out bg-gray-200 bg-opacity-40 backdrop-blur-sm rounded-2xl px-6 py-3.5 -mr-4">
-        <span>{locale}</span>
+      <button
+        onClick={() => setShowLanguage((prev) => !prev)}
+        style={{
+          background: showLanguage ? "" : "none",
+          boxShadow: showLanguage ? "" : "none",
+        }}
+        className="uppercase ml-auto relative transition-all duration-300 ease-in-out bg-gray-100 shadow-xl bg-opacity-40 backdrop-blur-sm rounded-2xl px-6 py-3.5 -mr-4"
+      >
+        <span>{locale.split("-")[0]}</span>
 
-        {showLanguage && (
-          <Card
-            variant="gray"
-            className="hover:-translate-y-0.5 mt-6 flex rounded-2xl flex-col gap-4 absolute top-full p-4 w-24 left-1/2 -translate-x-1/2 bg-gray-200 bg-opacity-40 backdrop-blur-xl border border-black border-opacity-10"
-          >
-            {locales.map((locale) => (
-              <Link className="uppercase hover:underline" href={`${locale}/`}>
-                {locale}
-              </Link>
-            ))}
-          </Card>
-        )}
+        <Card
+          style={{
+            pointerEvents: showLanguage ? "auto" : "none", 
+            opacity: showLanguage ? "" : "0",
+            boxShadow: showLanguage ? "" : "none",
+          }}
+          variant="gray"
+          className="hover:-translate-y-0 transition-all mt-6 flex rounded-xl flex-col gap-4 absolute top-full p-3 left-1/2 shadow-2xl -translate-x-1/2 bg-gray-100 bg-opacity-75 backdrop-blur-xl"
+        >
+          {locales.map((locale) => (
+            <Link
+              key={locale}
+              className="flex gap-2 uppercase hover:underline px-4 py-2 m-1 rounded-lg hover:bg-gray-200"
+              href={`${locale}/`}
+            >
+              <Image
+                key={locale}
+                src={`/${locale}-flag-icon.png`}
+                className="rounded-full"
+                width={16}
+                height={16}
+                alt="flag"
+              />
+
+              <span className="mr-4">{locale.split("-")[0]}</span>
+            </Link>
+          ))}
+        </Card>
       </button>
 
       <a

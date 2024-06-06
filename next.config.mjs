@@ -5,6 +5,10 @@ const nextConfig = {
   //   defaultLocale: "en",
   //   localeDetection: true,
   // },
+  // images: {
+  //   loader: 'akamai',
+  //   path: '/public/image',
+  // },
 };
 
 export default nextConfig;
