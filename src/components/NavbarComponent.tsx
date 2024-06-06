@@ -17,10 +17,10 @@ const NavbarComponent = ({ locale }: Props) => {
   const [showLanguage, setShowLanguage] = useState(false);
 
   return (
-    <nav className="flex items-center font-semibold text-xs gap-8 fixed top-0 left-0 right-0 mx-48 py-4 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25">
+    <nav className="flex items-center font-semibold text-xs gap-8 fixed top-0 left-0 right-0 xl:mx-48 mx-2 xl:px-0 px-4 py-4 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25">
       <a
         href="/"
-        className="font-black font-display text-lg mb-0.5 mr-4 hover:-translate-y-0.5"
+        className="font-black font-display text-lg mb-0.5 mr-4 hover:-translate-y-0.5 text-nowrap"
       >
         {NAME}
       </a>

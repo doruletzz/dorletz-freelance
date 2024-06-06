@@ -28,18 +28,18 @@ const TechnologySection = () => {
   return (
     <section
       id="technology"
-      className="flex flex-col items-center gap-3 pt-12 pb-24 mx-72 border-y border-black border-opacity-10"
+      className="flex flex-col items-center gap-3 xl:pt-12 pt-8 xl:pb-24 pb-8 xl:mx-72 mx-2 border-y border-black border-opacity-10"
     >
       <Chip variant="blue">{SECTION}</Chip>
-      <h2 className="text-3xl font-black font-display text-center mb-2 max-w-lg">
+      <h2 className="xl:text-3xl text-2xl font-black font-display text-center mb-2 max-w-lg">
         {HEADING}
       </h2>
       <p className="leading-normal max-w-lg opacity-75 text-center">
         {CONTENT}
       </p>
 
-      <div className="flex gap-3 mt-20">
-        <Card variant="lime" className="max-h-96 group basis-3/5">
+      <div className="grid xl:grid-cols-5 grid-cols-2 gap-3 xl:mt-20 mt-8">
+        <Card variant="lime" className="max-h-96 group xl:col-span-3 col-span-2">
           <Chip variant="yellow">{CARD_CHIP_1}</Chip>
 
           <span className="text-lg font-black font-display text-emerald-900">
@@ -73,7 +73,7 @@ const TechnologySection = () => {
           </a>
         </Card>
 
-        <Card variant="purple" className="max-h-96 group basis-2/5">
+        <Card variant="purple" className="xl:max-h-96 group xl:col-span-2 col-span-1">
           <Chip variant="green">{CARD_CHIP_2}</Chip>
           <span className="text-lg font-black font-display text-indigo-800">
             {CARD_HEADING_2}
@@ -96,10 +96,8 @@ const TechnologySection = () => {
             {CTA}
           </a>
         </Card>
-      </div>
 
-      <div className="flex gap-3">
-        <Card variant="emerald" className="max-h-96 group basis-2/5">
+        <Card variant="emerald" className="xl:max-h-96 group xl:col-span-2 col-span-1">
           <Chip variant="red">{CARD_CHIP_3}</Chip>
           <span className="text-lg font-black font-display text-teal-800">
             {CARD_HEADING_3}
@@ -122,7 +120,7 @@ const TechnologySection = () => {
             {CTA}
           </a>
         </Card>
-        <Card variant="yellow" className="max-h-96 group basis-3/5">
+        <Card variant="yellow" className="max-h-96 group xl:col-span-3 col-span-2">
           <Chip variant="blue">{CARD_CHIP_4}</Chip>
 
           <span className="text-lg font-black font-display text-yellow-900">
@@ -146,6 +144,7 @@ const TechnologySection = () => {
           </a>
         </Card>
       </div>
+
     </section>
   );
 };

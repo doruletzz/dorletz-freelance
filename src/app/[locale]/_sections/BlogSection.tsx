@@ -8,10 +8,10 @@ const BlogSection = () => {
   return (
     <section
       id="blog"
-      className="flex flex-col gap-2 mx-72 border-b border-black border-opacity-10"
+      className="flex flex-col gap-2 xl:mx-72 mx-2 border-b border-black border-opacity-10"
     >
       <Chip variant="red">Blog</Chip>
-      <h2 className="text-3xl font-display font-black mb-2 max-w-lg">
+      <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">
         Ultimele Articole Create
       </h2>
       <p className="leading-normal max-w-lg opacity-75">
@@ -20,7 +20,7 @@ const BlogSection = () => {
         omnis excepturi ducimus quisquam molestiae! Amet vitae placeat eveniet
         ex magnam.
       </p>
-      <div className="grid grid-cols-3 gap-3 my-16 ">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 xl:my-16 my-8 ">
         <div className="max-h-96 group flex flex-col gap-1.5 p-6 rounded-3xl bg-rose-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
           <span className="w-fit text-xs font-semibold px-4 py-1 bg-red-100 text-red-950 rounded-full mb-1">
             #1

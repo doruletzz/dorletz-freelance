@@ -5,10 +5,10 @@ const CTA = "Contacteaza-ma";
 
 const CTASection = () => {
   return (
-    <section id="cta" className="mx-72">
+    <section id="cta" className="xl:mx-72 mx-2">
       <Card variant="indigo" className="items-center gap-1.5 p-6 py-10">
         <Chip variant="yellow">Interesat?</Chip>
-        <span className="text-5xl font-black font-display text-indigo-900 max-w-lg text-center mt-2">
+        <span className="xl:text-5xl text-4xl font-black font-display text-indigo-900 max-w-lg text-center mt-2">
           Interesat? Hai sa Colaboram
         </span>
 

@@ -12,7 +12,7 @@ import PortofolioSection from "./_sections/PortofolioSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-20 overflow-hidden min-h-screen bg-white scroll-smooth">
+    <main className="flex flex-col xl:gap-20 gap-8 overflow-hidden min-h-screen bg-white scroll-smooth mx-auto w-[100vw]">
       <HomeSection />
       <PortofolioSection />
       <PackageSection />

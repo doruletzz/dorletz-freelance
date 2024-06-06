@@ -6,7 +6,7 @@ const PortofolioSection = () => {
   return (
     <section
       id="portofolio"
-      className="relative grid grid-cols-3 gap-3 px-72 mx-auto pt-20 max-h-[42rem] w-full overflow-hidden"
+      className="relative grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 xl:px-72 px-2 mx-auto xl:pt-20 pt-8 max-h-[42rem] w-full overflow-hidden"
     >
       <div className="absolute bottom-0 left-0 right-0 h-96 flex flex-col items-center justify-end bg-gradient-to-t from-white to-transparent pointer-events-none z-10">
         <a
@@ -17,10 +17,10 @@ const PortofolioSection = () => {
         </a>
       </div>
       <div className="cursor-pointer flex flex-col gap-3 w-full">
-        <div className="max-h-96 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-lime-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
+        <div className="min-h-96 max-h-96 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-lime-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
           A
         </div>
-        <div className="max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-green-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
+        <div className="min-h-60 max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-green-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
           B
         </div>
       </div>

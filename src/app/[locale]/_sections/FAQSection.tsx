@@ -6,12 +6,12 @@ const FAQSection = () => {
   return (
     <section
       id="faq"
-      className="mx-72 flex gap-6 border-b border-black border-opacity-10 pb-20"
+      className="xl:mx-72 mx-2 flex xl:flex-row flex-col gap-3 border-b border-black border-opacity-10 xl:pb-20 pb-8"
     >
-      <div className="flex flex-col basis-1/3 gap-6">
+      <div className="flex xl:flex-col flex-row basis-1/3 gap-3">
         <Card variant="orange" className="flex-1">
           <Chip variant="blue">FAQ</Chip>
-          <span className="text-3xl leading-normal font-black font-display text-red-900 max-w-lg">
+          <span className="xl:text-3xl text-2xl leading-normal font-black font-display text-red-900 max-w-lg">
             Intrebari puse frecvent
           </span>
         </Card>
