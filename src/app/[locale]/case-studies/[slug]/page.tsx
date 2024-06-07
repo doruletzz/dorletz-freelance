@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { formatDate, getArticlePosts } from "@/app/case-studies/utils";
-import { baseUrl } from "@/app/sitemap";
+import { formatDate, getArticlePosts } from "@/app/[locale]/case-studies/utils";
+import { baseUrl } from "@/app/[locale]/sitemap";
 import { Button, CaseStudyMDX } from "@/components";
 import Link from "next/link";
 import Image from "next/image";

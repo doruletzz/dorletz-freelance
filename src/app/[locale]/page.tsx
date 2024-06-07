@@ -1,5 +1,4 @@
 import { Card, Chip, Collapsable } from "@/components";
-import Image from "next/image";
 import HomeSection from "./_sections/HomeSection";
 import PackageSection from "./_sections/PackageSection";
 import TechnologySection from "./_sections/TechnologySection";
