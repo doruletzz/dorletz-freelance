@@ -25,7 +25,7 @@ const PackageSection = () => {
   return (
     <section
       id="package"
-      className="flex flex-col gap-2 xl:pt-12 pt-8 xl:mx-72 mx-2 border-t border-black border-opacity-10"
+      className="flex flex-col gap-2 xl:pt-12 pt-8 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-t border-black border-opacity-10"
     >
       <Chip variant="lime">{SECTION}</Chip>
       <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">

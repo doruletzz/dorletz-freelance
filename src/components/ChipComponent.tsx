@@ -18,7 +18,7 @@ const VARIANTS = {
 }
 
 const ChipComponent = ({ variant, children }: Props) => {
-  return <div className={`w-fit text-xs font-semibold font-display px-4 py-1 rounded-full ${VARIANTS[variant]}`}>{children}</div>;
+  return <div className={`w-fit text-xs font-bold font-display px-4 py-1 rounded-full ${VARIANTS[variant]}`}>{children}</div>;
 };
 
 export default ChipComponent;

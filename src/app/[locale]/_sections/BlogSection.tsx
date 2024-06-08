@@ -8,7 +8,7 @@ const BlogSection = () => {
   return (
     <section
       id="blog"
-      className="flex flex-col gap-2 xl:mx-72 mx-2 border-b border-black border-opacity-10"
+      className="flex flex-col gap-2 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-b border-black border-opacity-10"
     >
       <Chip variant="red">Blog</Chip>
       <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">

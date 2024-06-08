@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="flex flex-col gap-2 xl:mx-72 mx-2 border-b border-black border-opacity-10"
+      className="flex flex-col gap-2 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-b border-black border-opacity-10"
     >
       <Chip variant="gray">Despre</Chip>
       <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">
@@ -20,34 +20,36 @@ const AboutSection = () => {
         omnis excepturi ducimus quisquam molestiae! Amet vitae placeat eveniet
         ex magnam.
       </p>
-      <div className="grid grid-cols-3 gap-3 xl:my-16 my-8 h-[24rem]">
-        <div className="max-h-[24rem] overflow-hidden relative h-full group flex flex-col gap-1.5 p-6 rounded-3xl bg-blue-100 ">
-          <Image
-            className="scale-100 group-hover:scale-110 transition-transform duration-500 absolute inset-0 p-12 ease-in-out grayscale"
-            src="/profile-pic.png"
-            width={400}
-            height={1200}
-            alt="develop"
-          />
-        </div>
+      <div className="flex xl:flex-row flex-col gap-3 xl:my-16 my-8">
         <Card
           variant="yellow"
-          className="max-h-[24rem] col-span-2 group flex flex-col py-12"
+          className="flex flex-row justify-center w-full group"
         >
-          <Chip variant="indigo">Developer</Chip>
+          <div className="flex sm:flex-row flex-col gap-4 justify-between md:p-12 p-0">
+            <div className="flex flex-col">
+              <Chip variant="indigo">Developer</Chip>
 
-          <span className="text-xl font-black font-display capitalize">
-            Cine sunt si cu ce ma ocup?
-          </span>
-          <p className="text-sm opacity-75 leading-normal max-w-md">
-            Ma numes doros doru si ma ocup cu
-          </p>
-          <a
-            href="/contact"
-            className="font-bold text-sm py-1.5 rounded-3xl bg-orange-900 mt-8 text-zinc-100 w-[9.8rem] px-0 text-center"
-          >
-            {CTA}
-          </a>
+              <span className="text-xl font-black font-display capitalize">
+                Cine sunt si cu ce ma ocup?
+              </span>
+              <p className="text-sm opacity-75 leading-normal max-w-md">
+                Ma numes doros doru si ma ocup cu
+              </p>
+              <a
+                href="/contact"
+                className="font-bold text-sm py-1.5 rounded-3xl bg-orange-900 mt-8 text-zinc-100 w-[9.8rem] px-0 text-center"
+              >
+                {CTA}
+              </a>
+            </div>
+            <Image
+              className="h-full object-contain block"
+              src="/profile-pic.png"
+              width={200}
+              height={800}
+              alt="develop"
+            />
+          </div>
         </Card>
       </div>
     </section>

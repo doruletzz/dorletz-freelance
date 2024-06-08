@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Card } from ".";
+import { Button, Card } from ".";
 import { locales } from "@/utils/locales";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const CTA = "Contacteaza-ma";
 const NAME = "DORU DOROS";
@@ -17,28 +18,34 @@ const NavbarComponent = ({ locale }: Props) => {
   const [showLanguage, setShowLanguage] = useState(false);
 
   return (
-    <nav className="flex items-center font-semibold text-xs gap-8 fixed top-0 left-0 right-0 xl:mx-48 mx-2 xl:px-0 px-4 py-4 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25">
-      <a
+    <nav className="flex items-center justify-between sm:justify-start font-semibold text-xs gap-8 fixed top-0 left-0 right-0 xl:mx-48 xl:px-0 px-2 py-2 md:py-3 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25">
+      <Link
         href="/"
+        locale={locale}
         className="font-black font-display text-lg mb-0.5 mr-4 hover:-translate-y-0.5 text-nowrap"
       >
         {NAME}
-      </a>
-      <a href="/#home">HOME</a>
-      <a href="/#about">ABOUT</a>
+      </Link>
+      <Link className="md:block hidden" href="/#home">
+        HOME
+      </Link>
+      <Link className="md:block hidden" href="/#about">
+        ABOUT
+      </Link>
       <button
         onClick={() => setShowLanguage((prev) => !prev)}
         style={{
+          backdropFilter: showLanguage ? "" : "none",
           background: showLanguage ? "" : "none",
           boxShadow: showLanguage ? "" : "none",
         }}
-        className="uppercase ml-auto relative transition-all duration-300 ease-in-out bg-gray-100 shadow-xl bg-opacity-40 backdrop-blur-sm rounded-2xl px-6 py-3.5 -mr-4"
+        className="hover:-translate-y-0.5 sm:flex hidden uppercase ml-auto relative transition-all duration-300 ease-in-out bg-gray-100 shadow-xl bg-opacity-40 backdrop-blur-sm rounded-2xl px-6 py-3.5 -mr-4"
       >
         <span>{locale.split("-")[0]}</span>
 
         <Card
           style={{
-            pointerEvents: showLanguage ? "auto" : "none", 
+            pointerEvents: showLanguage ? "auto" : "none",
             opacity: showLanguage ? "" : "0",
             boxShadow: showLanguage ? "" : "none",
           }}
@@ -66,12 +73,12 @@ const NavbarComponent = ({ locale }: Props) => {
         </Card>
       </button>
 
-      <a
+      <Button
+        component={"a"}
         href="/contact"
-        className="px-7 font-bold text-sm py-2.5 rounded-3xl bg-gray-900 hover:text-white text-gray-200"
       >
         {CTA}
-      </a>
+      </Button>
     </nav>
   );
 };

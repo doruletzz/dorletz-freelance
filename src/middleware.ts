@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getLocale, locales } from "./utils/locales";
+import { getBrowserLanguage, getLocale, locales } from "./utils/locales";
 
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
@@ -8,11 +8,12 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
+  console.log("pn:", pathname, pathnameHasLocale)
+
   if (pathnameHasLocale) return;
 
   // Redirect if there is no locale
-  const locale = getLocale(request);
-
+  const locale = getBrowserLanguage(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
   // e.g. incoming request is /products
   // The new URL is now /en-US/products

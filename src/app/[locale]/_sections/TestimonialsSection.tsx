@@ -5,7 +5,7 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="border-b border-black border-opacity-10 xl:mx-72 mx-2 flex flex-col gap-2 items-center text-center xl:pb-20 pb-8"
+      className="border-b border-black border-opacity-10 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 flex flex-col gap-2 items-center text-center xl:pb-20 pb-8"
     >
       <Chip variant="green">Testimoniale</Chip>
       <h2 className="xl:text-3xl text-2xl font-black font-display mb-2 max-w-lg">

@@ -28,7 +28,7 @@ const TechnologySection = () => {
   return (
     <section
       id="technology"
-      className="flex flex-col items-center gap-3 xl:pt-12 pt-8 xl:pb-24 pb-8 xl:mx-72 mx-2 border-y border-black border-opacity-10"
+      className="flex flex-col items-center gap-3 xl:pt-12 pt-8 xl:pb-24 pb-8 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-y border-black border-opacity-10"
     >
       <Chip variant="blue">{SECTION}</Chip>
       <h2 className="xl:text-3xl text-2xl font-black font-display text-center mb-2 max-w-lg">

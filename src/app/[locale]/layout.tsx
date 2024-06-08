@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={` ${montserrat.variable} ${hind.className}  scroll-smooth`}
     >
-      <body className={"leading-loose"}>
+      <body className={"leading-loose relative"}>
         <Navbar locale={locale} />
         {children}
         <Footer />

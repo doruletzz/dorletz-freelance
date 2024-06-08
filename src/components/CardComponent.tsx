@@ -34,7 +34,7 @@ const CardComponent = ({ variant, style, className, children }: Props) => {
   return (
     <div
       style={style}
-      className={`xl:p-6 p-4 flex flex-col gap-1.5 hover:-translate-y-2 transition-translate duration-700 ease-in-out rounded-3xl  ${VARIANTS[variant]} ${className}`}
+      className={`sm:p-6 p-4 flex flex-col gap-1.5 hover:-translate-y-2 transition-translate duration-700 ease-in-out rounded-3xl  ${VARIANTS[variant]} ${className}`}
     >
       {children}
     </div>
