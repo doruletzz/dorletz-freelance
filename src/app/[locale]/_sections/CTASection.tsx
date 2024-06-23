@@ -1,15 +1,15 @@
 import { Card, Chip } from "@/components";
 import React from "react";
 
-const CTA = "Contacteaza-ma";
+const CTA = "Contact";
 
 const CTASection = () => {
   return (
     <section id="cta" className="xl:mx-72 lg:mx-36 sm:mx-16 mx-2">
       <Card variant="indigo" className="items-center gap-1.5 p-6 py-10">
-        <Chip variant="yellow">Interesat?</Chip>
+        <Chip variant="yellow">Need My Help?</Chip>
         <span className="xl:text-5xl text-4xl font-black font-display text-indigo-900 max-w-lg text-center mt-2">
-          Interesat? Hai sa Colaboram
+          Interested? Let&apos;s work together!
         </span>
 
         <a

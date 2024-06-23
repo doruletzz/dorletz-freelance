@@ -15,12 +15,12 @@ const CollapsableComponent = ({ title, children }: Props) => {
         onClick={() => setIsExpanded((prev) => !prev)}
         className="text-lg text-left font-black font-display flex justify-between w-full hover:-translate-y-0.5"
       >
-        {title} <span className={isExpanded ? "rotate-45" : ""}>+</span>
+        {title} <span className={isExpanded ? "rotate-45 ml-2" : " ml-2"}>+</span>
       </button>
       <p
         ref={descRef}
         style={{ height: !isExpanded ? "0px" : `${descRef.current?.scrollHeight ?? 132}px` }}
-        className="overflow-hidden leading-normal opacity-60 text-sm mt-2 translate-[height] duration-700 ease-in-out "
+        className="overflow-hidden leading-normal opacity-60 text-sm mt-2 mr-4 translate-[height] duration-700 ease-in-out "
       >
         {children}
       </p>

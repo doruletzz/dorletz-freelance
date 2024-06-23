@@ -7,19 +7,13 @@ const HEADING = "Complete & Personalized Experience";
 const CTA = "Reach Out To Me";
 
 const CARD_HEADING_1 = "Discover";
-const CARD_CONTENT_1 = `With extensive UI & UX knowledge, I create visually stunning and
-user-friendly websites that resonate with your audience and
-reinforce your brand identity.`;
+const CARD_CONTENT_1 = `I start by gaining a comprehensive understanding of your business, target audience, and objectives to develop a customized strategy that meets your specific needs.`;
 
 const CARD_HEADING_2 = "Design";
-const CARD_CONTENT_2 = `With extensive UI & UX knowledge, I create visually stunning and
-user-friendly websites that resonate with your audience and
-reinforce your brand identity.`;
+const CARD_CONTENT_2 = `My UX and UI design expertise enables me to create visually stunning and user-friendly websites that resonate with your audience and reinforce your brand identity.`;
 
 const CARD_HEADING_3 = "Development";
-const CARD_CONTENT_3 = `With extensive UI & UX knowledge, I create visually stunning and
-user-friendly websites that resonate with your audience and
-reinforce your brand identity.`;
+const CARD_CONTENT_3 = `I then develop your website in NextJS, ensuring it is responsive, secure, and optimized for performance on all devices.`;
 
 const PackageSection = () => {
   return (
@@ -32,10 +26,9 @@ const PackageSection = () => {
         {HEADING}
       </h2>
       <p className="leading-normal max-w-lg opacity-75">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-        consectetur id ea, unde cumque, porro quam illum delectus repellendus
-        omnis excepturi ducimus quisquam molestiae! Amet vitae placeat eveniet
-        ex magnam.
+        Providing expertly crafted web solutions designed to drive engagement,
+        boost conversions, and foster business growth. My approach ensures your
+        online presence is both effective and impactful.
       </p>
       <div className="grid xl:grid-cols-3 grid-cols-1 gap-3 mt-16">
         <Card variant="red" className="group">

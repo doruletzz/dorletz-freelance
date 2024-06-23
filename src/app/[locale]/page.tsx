@@ -10,12 +10,12 @@ import PortofolioSection from "./_sections/PortofolioSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col xl:gap-20 gap-8 overflow-hidden max-w-screen-2xl bg-white scroll-smooth mx-auto overflow-x-hidden">
+    <main className="flex flex-col xl:gap-20 gap-8 snap-start overflow-hidden max-w-screen-2xl bg-white scroll-smooth mx-auto overflow-x-hidden">
       <HomeSection />
       <PortofolioSection />
       <PackageSection />
       <TechnologySection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <AboutSection />
       <TestimonialsSection />
       <FAQSection />

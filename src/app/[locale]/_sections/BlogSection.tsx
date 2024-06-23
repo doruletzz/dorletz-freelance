@@ -12,7 +12,7 @@ const BlogSection = () => {
     >
       <Chip variant="red">Blog</Chip>
       <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">
-        Ultimele Articole Create
+        Latest Articles
       </h2>
       <p className="leading-normal max-w-lg opacity-75">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio

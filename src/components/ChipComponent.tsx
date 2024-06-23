@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 type Props = {
   variant: "red" | "green" | "blue" | "gray" | "indigo" | "lime"| "yellow" | "orange";
   children: ReactNode;
+  className?: string;
 };
 
 const VARIANTS = {
@@ -17,8 +18,8 @@ const VARIANTS = {
     "gray": "bg-gray-200 text-gray-900",
 }
 
-const ChipComponent = ({ variant, children }: Props) => {
-  return <div className={`w-fit text-xs font-bold font-display px-4 py-1 rounded-full ${VARIANTS[variant]}`}>{children}</div>;
+const ChipComponent = ({ variant, children, className }: Props) => {
+  return <div className={`w-fit text-xs font-bold text-opacity-90 hover:text-opacity-100 font-display px-4 py-1 rounded-full ${VARIANTS[variant]} ${className}`}>{children}</div>;
 };
 
 export default ChipComponent;

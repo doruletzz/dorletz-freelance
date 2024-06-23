@@ -22,17 +22,17 @@ const NavbarComponent = ({ locale }: Props) => {
       <Link
         href="/"
         locale={locale}
-        className="font-black font-display text-lg mb-0.5 mr-4 hover:-translate-y-0.5 text-nowrap"
+        className="font-black font-display text-lg mb-0.5 mr-4 transition-transform duration-500 ease-in-out hover:-translate-y-1 text-nowrap"
       >
         {NAME}
       </Link>
-      <Link className="md:block hidden" href="/#home">
+      {/* <Link className="md:block hidden" href="/#home">
         HOME
       </Link>
       <Link className="md:block hidden" href="/#about">
         ABOUT
-      </Link>
-      <button
+      </Link> */}
+      {/* <button
         onClick={() => setShowLanguage((prev) => !prev)}
         style={{
           backdropFilter: showLanguage ? "" : "none",
@@ -71,11 +71,12 @@ const NavbarComponent = ({ locale }: Props) => {
             </Link>
           ))}
         </Card>
-      </button>
+      </button> */}
 
       <Button
         component={"a"}
         href="/contact"
+        className="ml-auto"
       >
         {CTA}
       </Button>

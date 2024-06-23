@@ -1,48 +1,74 @@
-import { Button } from "@/components";
+import { Button, Chip } from "@/components";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const SEE_ALL = "See all"
+const SEE_ALL = "See all";
 
 const PortofolioSection = () => {
   return (
     <section
       id="portofolio"
-      className="relative grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 xl:px-72 lg:px-36 sm:px-16 px-2 mx-auto xl:pt-20 pt-8 max-h-[42rem] w-full overflow-hidden"
+      className="relative grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 xl:px-72 lg:px-36 sm:px-16 px-2 mx-auto xl:pt-20 pt-8 max-h-[45rem] w-full overflow-hidden"
     >
-      <div className="absolute bottom-0 left-0 right-0 h-96 flex flex-col items-center justify-end bg-gradient-to-t from-white to-transparent pointer-events-none z-10">
-        <Button
-          component={Link}
-          variant="secondary"
-          href="/portofolio"
-          className="pointer-events-auto"
-        >
-          {SEE_ALL}
-        </Button>
-      </div>
       <div className="cursor-pointer flex flex-col gap-3 w-full">
-        <div className="min-h-96 max-h-96 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-lime-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          A
+        <div className="relative hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
+          <Image
+            src="/portofolio-orobuddy-home.png"
+            alt="nasium"
+            width={480}
+            height={960}
+            className="min-h-96 object-cover max-h-96 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 "
+          />
+          <Chip variant="yellow" className="absolute top-2 right-2">
+            Newest
+          </Chip>
         </div>
-        <div className="min-h-60 max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-green-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
+
+        <Image
+          src="/portofolio-chesspal-home.png"
+          alt="nasium"
+          width={480}
+          height={960}
+          className="min-h-60 object-cover object-left-top max-h-60 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
+        />
+
+        {/* <div className="min-h-60 max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-green-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
           B
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-3 w-full">
-        <div className="max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-purple-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          B
-        </div>
-        <div className="max-h-96 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-orange-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          A
-        </div>
+        <Image
+          src="/portofolio-nasium-home.png"
+          alt="nasium"
+          width={480}
+          height={960}
+          className="min-h-60 object-cover max-h-60 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
+        />
+
+        <Image
+          src="/portofolio-keycaps-home.png"
+          alt="nasium"
+          width={480}
+          height={960}
+          className="min-h-96 object-cover object-top max-h-96 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
+        />
       </div>
       <div className="flex flex-col gap-3 w-full">
-        <div className="max-h-96 min-h-96 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-blue-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          A
-        </div>
-        <div className="max-h-60 min-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-teal-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          C
-        </div>
+        <Image
+          src="/portofolio-nasium-app.png"
+          alt="nasium"
+          width={480}
+          height={960}
+          className="min-h-96 object-cover object-top max-h-96 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
+        />
+        <Image
+          src="/portofolio-dorletz-home.png"
+          alt="nasium"
+          width={480}
+          height={960}
+          className="min-h-60 object-cover object-bottom max-h-60 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
+        />
       </div>
     </section>
   );
