@@ -6,8 +6,9 @@ import { locales } from "@/utils/locales";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import useScrollPosition from "@/hooks/useScrollPostition";
 
-const CTA = "Contacteaza-ma";
+const CTA = "Contact";
 const NAME = "DORU DOROS";
 
 type Props = {
@@ -15,14 +16,21 @@ type Props = {
 };
 
 const NavbarComponent = ({ locale }: Props) => {
-  const [showLanguage, setShowLanguage] = useState(false);
+  const { scrollPosition, isScrolling } = useScrollPosition();
 
   return (
-    <nav className="flex items-center justify-between sm:justify-start font-semibold text-xs gap-8 fixed top-0 left-0 right-0 xl:mx-48 xl:px-0 px-2 py-2 md:py-3 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25">
+    <nav
+      style={{
+        transform: `translateY(${
+          isScrolling && scrollPosition > 320 ? -100 : -0
+        }%`,
+      }}
+      className="flex items-center justify-between sm:justify-start transition-transform duration-700 ease-in-out font-semibold text-xs gap-8 fixed top-0 left-0 right-0 xl:mx-48 xl:px-0 px-2 py-2 md:py-3 bg-white bg-opacity-25 backdrop-blur-md z-50 border-b border-b-black border-opacity-25"
+    >
       <Link
         href="/"
         locale={locale}
-        className="font-black font-display text-lg mb-0.5 mr-4 transition-transform duration-500 ease-in-out hover:-translate-y-1 text-nowrap"
+        className="font-black font-display text-lg mb-0.5 mr-4 transition-transform duration-500 ease-in-out hover:-translate-y-0.5 text-nowrap"
       >
         {NAME}
       </Link>
@@ -73,11 +81,7 @@ const NavbarComponent = ({ locale }: Props) => {
         </Card>
       </button> */}
 
-      <Button
-        component={"a"}
-        href="/contact"
-        className="ml-auto"
-      >
+      <Button component={"a"} href="/contact" className="ml-auto">
         {CTA}
       </Button>
     </nav>

@@ -1,50 +1,58 @@
 "use client";
 
-import { Checkbox } from "@/components";
+import { Button, Card, Checkbox, Chip, Textfield } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 
 const Contact = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(2);
+
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+    alert("submit");
+  };
 
   return (
     <section
       id="contact"
-      className="mt-36 flex flex-col items-center text-center px-72"
+      className="mt-36 flex flex-col gap-2 items-center text-center px-72"
     >
-      <span className="w-fit text-xs font-semibold px-4 py-1 bg-green-100 text-green-800 rounded-full">
-        Contact
-      </span>
-      <h2 className="text-3xl font-black mb-2 max-w-lg">Trimite-mi un mesaj</h2>
+      <Chip variant="green">Contact</Chip>
+      <h1 className="text-3xl font-black font-display mb-2 max-w-lg">
+        Reach Out To Me!
+      </h1>
       <p className="leading-normal max-w-lg opacity-75">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
         consectetur id ea..
       </p>
 
       <div className="text-left flex gap-3 mt-20 w-full">
-        <form
+        <Card
+          variant="blue"
+          component={"form"}
           onSubmit={(e) => e.preventDefault()}
-          className="min-h-[32rem] flex flex-col basis-2/3 gap-6 p-6 rounded-3xl bg-lime-50 hover:-translate-y-2 transition-translate duration-700 ease-in-out"
+          className="min-h-[32rem] basis-2/3"
         >
           <div className="col-span-2">
-            <span className="w-fit text-xs font-bold px-4 py-1 bg-green-100 text-lime-900 rounded-full mb-1">
-              Cum te pot ajuta?
-            </span>
+            <Chip variant="red">Tell Me More</Chip>
           </div>
           {step === 0 && (
             <>
               <div>
-                <span className="text-lg font-black text-emerald-900">
-                  Ce goaluri ai?
+                <span className="text-lg font-black font-display text-indigo-900">
+                  What are your goals?
                 </span>
-                <div className="flex flex-col gap-1 mt-3">
+                <div className="flex flex-col gap-1 mt-1 mb-4">
                   <Checkbox
+                    type="radio"
+                    name="goal"
                     id="from-scratch"
                     label="Am nevoie de un website de la zero"
                     value="scratch"
                   />
                   <Checkbox
+                    type="radio"
+                    name="goal"
                     id="revamp"
                     label="Am nevoie de un website revamp"
                     value="revamp"
@@ -53,10 +61,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <span className="text-lg font-black text-emerald-900">
-                  De ce servicii ai nevoie?
+                <span className="text-lg font-black font-display text-indigo-900">
+                  What Services do you need?
                 </span>
-                <div className="flex flex-col gap-1 mt-3">
+                <div className="flex flex-col gap-1 mt-1 mb-4">
                   <Checkbox id="branding" label="Branding" value="branding" />
                   <Checkbox
                     id="web-design"
@@ -81,16 +89,20 @@ const Contact = () => {
           {step === 1 && (
             <>
               <div>
-                <span className="text-lg font-black text-emerald-900">
-                  Pentru ce vor fi serviciile?
+                <span className="text-lg font-black font-display text-indigo-900">
+                  What do you need in your new Website?
                 </span>
-                <div className="flex flex-col gap-1 mt-3">
+                <div className="flex flex-col gap-1 mt-1 mb-4">
                   <Checkbox
+                    type="radio"
+                    name="variant"
                     id="variant-three-pages"
                     label="Am nevoie de 3 pagini (e.g. Home, About, Contact Us)"
                     value="variant-three-pages"
                   />
                   <Checkbox
+                    type="radio"
+                    name="variant"
                     id="variant-ten-pages"
                     label="Am nevoie de 10+ pagini pentru produse/servicii"
                     value="variant-ten-pages"
@@ -99,28 +111,36 @@ const Contact = () => {
               </div>
 
               <div>
-                <span className="text-lg font-black text-emerald-900">
-                  Care este bugetul tau?
+                <span className="text-lg font-black font-display text-indigo-900">
+                  What is your 2024 budget for digital spend?
                 </span>
-                <div className="flex flex-col gap-1 mt-3">
+                <div className="flex flex-col gap-1 mt-1 mb-4">
                   <Checkbox
+                    type="radio"
+                    name="budget"
                     id="budget-1-5k"
                     label="€1-5k"
                     value="budget-1-5k"
                   />
 
                   <Checkbox
+                    type="radio"
+                    name="budget"
                     id="budget-5-10k"
                     label="€5-10k"
                     value="budget-5-10k"
                   />
 
                   <Checkbox
+                    type="radio"
+                    name="budget"
                     id="budget-10-30k"
                     label="€10-30k"
                     value="budget-10-30k"
                   />
                   <Checkbox
+                    type="radio"
+                    name="budget"
                     id="budget-30k+"
                     label="€30k+"
                     value="budget-30k+"
@@ -132,68 +152,67 @@ const Contact = () => {
           {step == 2 && (
             <>
               <div>
-                <span className="text-lg font-black text-emerald-900">
-                  Cum te pot contacta?
+                <span className="text-lg font-black font-display text-indigo-900">
+                  How can I get in touch with you?
                 </span>
-                <div className="flex flex-col gap-1 mt-3">
-                  <div className="flex gap-2 items-center">
-                    <input id="branding" type="text" />
-                    <label htmlFor="branding">Full Name</label>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <input id="web-design" type="text" />
-                    <label htmlFor="web-design">Email</label>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <input id="web-development" type="text" />
-                    <label htmlFor="web-development">Domain</label>
-                  </div>
+                <div className="flex flex-col gap-1 mt-1 mb-4">
+                  <Textfield id="fullname" label="Full Name" />
+                  <Textfield id="email" label="Email" />
+                  <Textfield id="domain" label="Domain" />
                 </div>
               </div>
             </>
           )}
-          <button className="mt-auto font-bold rounded-full text-sm font-display w-fit ml-auto px-6 py-1.5 bg-black text-white" onClick={() => setStep((prev) => prev + 1)}>Next</button>
-        </form>
-        <div className="group relative basis-1/3 flex flex-col gap-6 p-6 rounded-3xl bg-purple-50 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          <span className="w-fit text-xs font-bold px-4 py-1 bg-indigo-100 text-indigo-800 rounded-full mb-1">
-            Social
-          </span>
+          <div className="ml-auto mt-auto flex gap-2">
+            {step !== 0 && (
+              <Button
+                variant="text"
+                onClick={() => setStep((prev) => prev - 1)}
+                className=""
+              >
+                Back
+              </Button>
+            )}
+            <Button
+              variant="primary"
+              style={{ width: step !== 2 ? "8rem" : "14rem" }}
+              className="text-nowrap text-ellipsis overflow-hidden"
+              onClick={(e: MouseEvent<HTMLButtonElement>) => {
+                step !== 2 ? setStep((prev) => prev + 1) : handleSubmit(e);
+              }}
+            >
+              {step !== 2 ? "Next" : "Let's Work together!"}
+            </Button>
+          </div>
+        </Card>
+        <Card className="group relative basis-1/3" variant="yellow">
+          <Chip variant="indigo">Social</Chip>
           <div className="w-full">
-            <span className="text-lg font-black text-indigo-800">
-              Alte locuri unde ma poti gasi
+            <span className="text-lg font-black capitalize font-display leading-none text-indigo-900">
+              You can Also find me on Social Media!
             </span>
-            <p className="text-sm opacity-75 max-w-xl leading-normal text-indigo-900">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
-              cupiditate ab eum dolor quisquam ea fuga suscipit ullam...
-            </p>
-            <div className="grid grid-cols-2 mt-12 text-sm gap-4 text-indigo-700 font-bold">
+            <div className="grid grid-cols-3 mt-4 text-xs gap-4 text-indigo-700 font-display font-bold">
               <Link
-                className="opacity-75 hover:opacity-100 hover:underline hover:-translate-y-0.5"
+                className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5"
                 href="https://google.com/"
               >
                 twitter
               </Link>
               <Link
-                className="opacity-75 hover:opacity-100 hover:underline hover:-translate-y-0.5"
+                className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5"
                 href="https://google.com/"
               >
                 email
               </Link>
               <Link
-                className="opacity-75 hover:opacity-100 hover:underline hover:-translate-y-0.5"
+                className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5"
                 href="https://google.com/"
               >
                 github{" "}
               </Link>
-              <Link
-                className="opacity-75 hover:opacity-100 hover:underline hover:-translate-y-0.5"
-                href="https://google.com/"
-              >
-                nasium{" "}
-              </Link>
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

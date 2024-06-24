@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-type Props = {
+type Props<T extends React.ElementType> = {
   style?: React.CSSProperties;
   className?: string;
   variant:
@@ -15,7 +15,8 @@ type Props = {
     | "emerald"
     | "orange";
   children: ReactNode;
-};
+  component?: T;
+} & React.ComponentPropsWithoutRef<T>;
 
 const VARIANTS = {
   red: "bg-red-100 text-red-800",
@@ -30,14 +31,23 @@ const VARIANTS = {
   gray: "bg-gray-100 text-gray-900",
 };
 
-const CardComponent = ({ variant, style, className, children }: Props) => {
+const CardComponent = <T extends React.ElementType>({
+  variant,
+  component,
+  style,
+  className,
+  children,
+  ...otherProps
+}: Props<T>) => {
+  const OverridenComponent = component || "div";
   return (
-    <div
+    <OverridenComponent
       style={style}
       className={`sm:p-6 p-4 flex flex-col gap-1.5 hover:-translate-y-2 transition-translate duration-700 ease-in-out rounded-3xl  ${VARIANTS[variant]} ${className}`}
+      {...otherProps}
     >
       {children}
-    </div>
+    </OverridenComponent>
   );
 };
 

@@ -21,9 +21,6 @@ const HomeSection = () => {
         <Chip variant="red">Seo</Chip>
       </div>
       <div className="relative">
-        <h1 className="xl:text-6xl text-4xl tracking-wide capitalize font-display font-black -z-0 max-w-2xl text-center leading-none">
-          {HEADING}
-        </h1>
         <Image
           alt="alarm"
           width={200}
@@ -46,6 +43,10 @@ const HomeSection = () => {
           src="/notebook-illustration.png"
           className="absolute md:-right-36 -right-20 -bottom-8 w-52 z-20 group-hover:-rotate-6 rotate-[-36deg] transition-transform duration-700 group-hover:scale-100 scale-90 ease-in-out "
         />
+        
+        <h1 className="xl:text-6xl text-4xl tracking-wide capitalize font-display font-black max-w-2xl text-center leading-none z-10">
+          {HEADING}
+        </h1>
       </div>
       <p className="leading-relaxed font-medium max-w-xl text-center xl:text-lg text-sm mx-4 opacity-75 mt-2">
         {SUBHEADING}

@@ -9,7 +9,7 @@ const PortofolioSection = () => {
   return (
     <section
       id="portofolio"
-      className="relative grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 xl:px-72 lg:px-36 sm:px-16 px-2 mx-auto xl:pt-20 pt-8 max-h-[45rem] w-full overflow-hidden"
+      className="relative grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-3 xl:px-72 lg:px-36 sm:px-16 px-2 mx-auto xl:pt-20 pt-8 max-h-[45rem] w-full overflow-hidden"
     >
       <div className="cursor-pointer flex flex-col gap-3 w-full">
         <div className="relative hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
@@ -32,10 +32,6 @@ const PortofolioSection = () => {
           height={960}
           className="min-h-60 object-cover object-left-top max-h-60 group flex flex-col basis-2/3 gap-1.5 rounded-3xl border border-black border-opacity-25 hover:-translate-y-2 transition-translate duration-700 ease-in-out "
         />
-
-        {/* <div className="min-h-60 max-h-60 group flex flex-col basis-2/3 gap-1.5 p-6 rounded-3xl bg-green-100 hover:-translate-y-2 transition-translate duration-700 ease-in-out ">
-          B
-        </div> */}
       </div>
       <div className="flex flex-col gap-3 w-full">
         <Image
