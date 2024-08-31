@@ -102,4 +102,6 @@ const TextFieldComponent = forwardRef<HTMLInputElement, Props<string>>(({
   );
 });
 
+TextFieldComponent.displayName = "TextFieldComponent"
+
 export default TextFieldComponent;
