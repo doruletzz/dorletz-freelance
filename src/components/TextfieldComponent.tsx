@@ -1,5 +1,7 @@
+'use client'
+
 import { cn } from "@/utils/cn";
-import React, { ChangeEventHandler, FocusEventHandler, ReactNode } from "react";
+import React, { ChangeEventHandler, FocusEventHandler, forwardRef, ReactNode, Ref, useEffect, useRef } from "react";
 
 type Props<T> = {
   glow?: "yellow" | "blue" | "green" | null;
@@ -19,7 +21,7 @@ type Props<T> = {
   required?: boolean;
 };
 
-const TextFieldComponent = <T extends string | number>({
+const TextFieldComponent = forwardRef<HTMLInputElement, Props<string>>(({
   glow = null,
   disabled,
   id,
@@ -35,7 +37,20 @@ const TextFieldComponent = <T extends string | number>({
   endAdornment,
   required,
   onChange,
-}: Props<T>) => {
+  ...otherProps
+}, ref) => {
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    if (!ref) return;
+
+    if (typeof ref === 'function') {
+      ref(targetRef.current);
+    } else {
+      ref.current = targetRef.current;
+    }
+  }, [ref]);
+
   return (
     <div
       id={id}
@@ -46,7 +61,7 @@ const TextFieldComponent = <T extends string | number>({
     >
       <div
         className={cn(
-          `relative flex items-center gap-2 rounded-xl border px-2 bg-blue-50 py-0.5 hover:-translate-y-0.5`
+          `relative flex items-center gap-2 rounded-xl border px-2 bg-blue-50 py-0.5 hover:-translate-y-0.5 transition-transform duration-300 ease-in-out`
         )}
       >
         {startAdornment}
@@ -55,7 +70,7 @@ const TextFieldComponent = <T extends string | number>({
             <label
               htmlFor={id}
               className={`absolute font-display font-semibold ${
-                value ? "top-0.5 text-xs opacity-100" : "text-sm top-2.5 opacity-60"
+                ref ? "top-0.5 text-xs opacity-100" : "text-sm top-2.5 opacity-60"
               } ${error ? "text-red-900 " : "text-blue-900 "} ${
                 disabled ? " text-gray-600" : ""
               } text-md  pointer-events-none h-4 transition-all duration-500 ease-in-out-expo group-focus-within:top-0.5 group-focus-within:text-xs`}
@@ -65,6 +80,7 @@ const TextFieldComponent = <T extends string | number>({
           )}
           <input
             id={id}
+            ref={ref}
             value={value}
             type={type}
             onChange={onChange}
@@ -77,12 +93,13 @@ const TextFieldComponent = <T extends string | number>({
             } ${disabled ? "bg-blue-200 border-gray-600  text-gray-500" : ""} ${
               className ?? ""
             }`}
+            {...otherProps}
           />
         </div>
         {endAdornment}
       </div>
     </div>
   );
-};
+});
 
 export default TextFieldComponent;

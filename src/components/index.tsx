@@ -7,3 +7,4 @@ export { default as Collapsable } from "./CollapsableComponent";
 export { default as Navbar } from "./NavbarComponent";
 export { default as Footer } from "./FooterComponent";
 export { default as CaseStudyMDX } from "./CaseStudyMDXComponent";
+export { default as PortofolioCard } from "./PortofolioCardComponent";

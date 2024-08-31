@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
           &quot;The design process was swift, and the development process was
             efficient, with feedback given right away.&quot;
           </p>
-          <span className="text-lg font-black font-display text-sky-800">
+          <span className="text-2xl font-black font-display text-sky-800">
             Chesspal
           </span>
         </Card>
@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
           &quot;Even though the project was big, the app and landing page were
             designed and developed quickly and efficiently.&quot;
           </p>
-          <span className="text-md font-black font-display text-yellow-800">
+          <span className="text-2xl font-black font-display text-yellow-800">
             Nasium
           </span>
         </Card>

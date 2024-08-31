@@ -1,3 +1,4 @@
+import { cn } from "@/utils/cn";
 import React, { ReactNode } from "react";
 
 type Props<T extends React.ElementType> = {
@@ -8,8 +9,10 @@ type Props<T extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<T>;
 
 const VARIANTS = {
-  primary: "bg-gray-900 text-white font-display hover:shadow-xl hover:shadow-blue-100 hover:bg-blue-800",
-  secondary: "bg-transparent text-gray-900 border border-gray-700 font-display hover:bg-gray-100 bg-opacity-25",
+  primary:
+    "bg-gray-900 text-white font-display hover:shadow-xl hover:shadow-blue-100 hover:bg-blue-800",
+  secondary:
+    "text-gray-900 border border-gray-700 font-display bg-gray-100 bg-opacity-25 hover:bg-opacity-25 backdrop-blur-sm",
   text: "bg-none",
 };
 
@@ -24,8 +27,11 @@ const ButtonComponent = <T extends React.ElementType>({
 
   return (
     <OverridenComponent
-      className={`px-8 font-bold xl:text-sm text-xs py-2.5 rounded-3xl transition-all duration-500 ease-in-out hover:-translate-y-1 ${VARIANTS[variant]} ${className}`}
-      
+      className={cn(
+        `px-8 font-bold xl:text-sm text-xs py-2.5 rounded-3xl transition-all duration-500 ease-in-out hover:-translate-y-1`,
+        VARIANTS[variant],
+        className
+      )}
       {...otherProps}
     >
       {children}

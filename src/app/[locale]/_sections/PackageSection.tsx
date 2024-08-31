@@ -19,7 +19,7 @@ const PackageSection = () => {
   return (
     <section
       id="package"
-      className="flex flex-col gap-2 xl:pt-12 pt-8 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-t border-black border-opacity-10"
+      className="flex flex-col gap-2 xl:pt-20 pt-8 xl:mx-72 lg:mx-36 sm:mx-16 mx-2 border-t border-black border-opacity-10"
     >
       <Chip variant="lime">{SECTION}</Chip>
       <h2 className="xl:text-3xl text-2xl font-display font-black mb-2 max-w-lg">
@@ -32,7 +32,7 @@ const PackageSection = () => {
       </p>
       <div className="grid xl:grid-cols-3 grid-cols-1 gap-3 mt-16">
         <Card variant="red" className="group">
-          <Chip variant="red">#1</Chip>
+          <Chip variant="yellow">#1</Chip>
           <span className="text-lg font-display font-black text-orange-900">
             {CARD_HEADING_1}
           </span>
@@ -54,7 +54,7 @@ const PackageSection = () => {
           </a>
         </Card>
         <Card variant="yellow" className="group">
-          <Chip variant="yellow">#2</Chip>
+          <Chip variant="blue">#2</Chip>
           <span className="text-lg font-black font-display text-yellow-800">
             {CARD_HEADING_2}
           </span>
@@ -77,7 +77,7 @@ const PackageSection = () => {
           </a>
         </Card>
         <Card variant="blue" className="group">
-          <Chip variant="blue">#3</Chip>
+          <Chip variant="red">#3</Chip>
           <span className="text-lg font-black font-display text-sky-800">
             {CARD_HEADING_3}
           </span>

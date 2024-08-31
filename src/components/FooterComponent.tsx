@@ -7,7 +7,7 @@ const FooterComponent = () => {
   return (
     <footer
       id="footer"
-      className="xl:mt-24 mt-16 pt-16 bg-zinc-100 xl:px-48 px-2 grid grid-cols-3 gap-6 pb-2 rounded-t-3xl xl:mx-24 mx-0"
+      className="xl:mt-24 mt-16 pt-16 bg-zinc-100 hover:bg-zinc-200 transition-colors duration-700 border border-zinc-300 ease-in-out xl:px-48 px-2 grid grid-cols-3 gap-6 pb-2 rounded-t-3xl xl:mx-24 mx-0"
     >
       <div className="flex flex-col gap-2">
         <a

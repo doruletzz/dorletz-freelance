@@ -2,6 +2,7 @@
   "name": "dorletz-freelance",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "npx next build",
@@ -11,7 +12,8 @@
   "dependencies": {
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.0"
   },
   "devDependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
