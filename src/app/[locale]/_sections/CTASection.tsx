@@ -1,4 +1,5 @@
-import { Card, Chip } from "@/components";
+import { Button, Card, Chip } from "@/components";
+import Link from "next/link";
 import React from "react";
 
 const CTA = "Contact";
@@ -12,12 +13,13 @@ const CTASection = () => {
           Interested? Let&apos;s work together!
         </span>
 
-        <a
+        <Button
+          component={Link}
           href="/contact"
-          className="px-8 font-bold text-sm font-display py-2.5 rounded-3xl bg-indigo-900 text-white mt-8"
+          className="mt-8"
         >
           {CTA}
-        </a>
+        </Button>
       </Card>
     </section>
   );

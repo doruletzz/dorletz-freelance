@@ -30,9 +30,13 @@ type Props = {
     text: string;
   };
   title: string;
+  link: {
+    live?: string,
+    case?: string;
+  }
 };
 
-const PortofolioCardComponent = ({ image, tag, title }: Props) => {
+const PortofolioCardComponent = ({ image, tag, title, link }: Props) => {
   return (
     <Card variant={image.variant ?? 'yellow'} className="overflow-hidden sm:p-0 p-0 relative rounded-3xl min-w-[83%]">
       <Image
@@ -48,12 +52,12 @@ const PortofolioCardComponent = ({ image, tag, title }: Props) => {
       </Chip>
 
       
-      <div className="flex absolute left-4 bottom-4">
-        <p className="text-2xl font-display font-black">{title}  </p>
+      <div className="flex absolute left-4 md:bottom-4 md:top-auto top-3">
+        <p className="text-2xl font-display font-black">{title}</p>
       </div>
       <div className="flex gap-2 absolute bottom-4 right-4">
-      <Button href="" component={Link} variant="secondary">Live</Button>
-      <Button>Case Study</Button>
+      {!!link?.live && <Button href={link.live} target="_blank" component={Link} variant="secondary">Live</Button>}
+      {!!link?.case && <Button href={link.case} component={Link}>Case Study</Button>}
       </div>
     </Card>
   );

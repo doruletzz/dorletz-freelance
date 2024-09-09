@@ -12,13 +12,13 @@ const FAQSection = () => {
       <div className="flex xl:flex-col flex-row basis-1/3 gap-3">
         <Card variant="orange" className="flex-1">
           <Chip variant="blue">FAQ</Chip>
-          <span className="xl:text-3xl text-2xl leading-normal font-black font-display text-red-900 max-w-lg">
+          <span className="xl:text-3xl md:text-2xl text-xl leading-normal font-black font-display text-red-900 max-w-lg">
             Frequently Asked Questions
           </span>
         </Card>
         <Card
           variant="purple"
-          className="group aspect-square p-12 grid place-items-center"
+          className="group aspect-square md:p-12 p-6 grid place-items-center"
         >
           <Image
             className="group-hover:-rotate-12 rotate-12 scale-90 group-hover:scale-100 transition-transform duration-700 ease-in-out "

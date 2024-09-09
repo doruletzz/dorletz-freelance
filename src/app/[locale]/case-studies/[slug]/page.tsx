@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { formatDate, getArticlePosts } from "@/app/[locale]/case-studies/utils";
 import { baseUrl } from "@/app/[locale]/sitemap";
-import { Button, CaseStudyMDX } from "@/components";
+import { Button, Card, CaseStudyMDX } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -55,7 +55,8 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 export default function Article({ params }: { params: { slug: string } }) {
-  let post = getArticlePosts().find((post) => post.slug === params.slug);
+  const posts = getArticlePosts();
+  let post = posts.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -100,38 +101,35 @@ export default function Article({ params }: { params: { slug: string } }) {
           </article>
         </div>
         <div className="flex flex-col gap-4 w-64 h-96">
-          {/* <div className="w-full text-sm text-gray-500">Share this Article</div>
-          <Button id="pinterset" className="w-auto block text-left">
-            Pinterest
-          </Button>
-          <Button id="facebook" className="w-auto block text-left">
-            Facebook
-          </Button>
-          <Button id="twitter" className="w-auto block text-left">
-            Twitter
-          </Button>
-          <br /> */}
-          <div className="w-full text-sm text-gray-500">Try Nasium</div>
+          
+        <span className="opacity-60 text-md font-black font-display">
+                   Case Studies
+                  </span>
+          {posts.slice(0, 6).map(
+            (_post) =>
+              post.slug !== _post.slug && (
+                <Link
+                  key={_post.slug}
+                  className="transition-transform duration-150 hover:-translate-y-0.5 hover:underline no-underline flex flex-col gap-1"
+                  href={_post.slug}
+                >
+                  <span className="text-sm font-black font-display">
+                    {_post.metadata.title}
+                  </span>
+                  <p className="opacity-60 text-xs font-semibold">
+                    {formatDate(_post.metadata.publishedAt)}
+                  </p>
+                </Link>
+              )
+          )}
           <Link
-            target="_blank"
-            href="https://play.google.com/store/apps/details?id=coach.nasium.twa"
-            className="hover:-translate-y-0.5 duration-300 h-auto"
+            className="transition-transform duration-150 hover:-translate-y-0.5 hover:underline no-underline flex flex-col gap-1"
+            href="/case-studies/"
           >
-            <Image
-              className="w-24 border shadow-indigo-900 border-gray-700  rounded-lg"
-              height={48}
-              width={240}
-              alt="google-play"
-              src="/google-play.webp"
-            />
+            <p className="opacity-60 text-sm font-semibold">
+              {"More..."}
+            </p>
           </Link>
-          <Image
-            className="w-24 opacity-50 border shadow-indigo-900 border-gray-700  rounded-lg"
-            height={48}
-            width={240}
-            alt="app-store"
-            src="/app-store.png"
-          />
         </div>
       </div>
     </section>

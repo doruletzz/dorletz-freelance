@@ -27,7 +27,7 @@ const NavbarComponent = ({ locale }: Props) => {
       }}
       className="flex items-center justify-between sm:justify-start transition-transform duration-700 ease-in-out font-semibold text-xs gap-8 fixed top-0 left-0 right-0 bg-white bg-opacity-25 backdrop-blur-md z-50"
     >
-      <div className="flex  border-b border-b-black border-opacity-25 w-full justify-between  xl:mx-48 xl:px-4 px-2 py-2 md:py-3 items-center">
+      <div className="flex  border-b border-b-black border-opacity-25 w-full justify-between xl:mx-48 xl:px-4 px-2 py-2 md:py-3 items-center">
         <Link
           href="/"
           locale={locale}

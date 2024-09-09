@@ -1,7 +1,22 @@
+import Link from "next/link";
 import React from "react";
 
-const CTA = "Contacteaza-ma";
+const CTA = "Contact";
 const NAME = "DORU DOROS";
+
+const LINKS = [
+  { href: "/home", label: "Home" },
+  { href: "/portofolio", label: "Portofolio" },
+  { href: "/contact", label: "Contact" },
+  { href: "/policy", label: "Policy" },
+];
+
+const SOCIALS = [
+  { href: "https://x.com/dorletz", label: "Twitter" },
+  { href: "https://github.com/doruletzz", label: "Github" },
+  { href: "https://home.nasium.coach/", label: "Email" },
+  // { href: "/policy", label: "Policy" },
+]
 
 const FooterComponent = () => {
   return (
@@ -12,7 +27,7 @@ const FooterComponent = () => {
       <div className="flex flex-col gap-2">
         <a
           href="/"
-          className="font-black font-display text-lg mb-0.5 mr-4 hover:-translate-y-0.5"
+          className="font-black font-display text-lg mb-4 mr-4 hover:-translate-y-0.5"
         >
           {NAME}
         </a>
@@ -26,57 +41,34 @@ const FooterComponent = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-black font-display">Links</span>
-        <a
-          href="/#home"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          HOME
-        </a>
-        <a
-          href="/portofolio"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          PORTOFOLIO
-        </a>
-        <a
-          href="/contact"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          CONTACT
-        </a>
-        <a
-          href="/policy"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          POLICIES
-        </a>
+        <span className="text-lg font-black font-display mb-4">Links</span>
+        {LINKS.map((link) => (
+          <Link
+            key={link.href}
+            className="transition-transform duration-150 hover:-translate-y-0.5 hover:underline no-underline text-sm font-semibold"
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
 
-      
       <div className="flex flex-col gap-2">
-        <span className="text-lg font-black font-display">Socials</span>
-        <a
-          href="https://github.com/doruletzz"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          GITHUB
-        </a>
-        <a
-          href="https://x.com/dorletz"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          TWITTER
-        </a>
-        <a
-          href="https://home.nasium.coach/"
-          className="w-fit text-xs font-semibold mb-0.5 mr-4 hover:-translate-y-0.5 opacity-75 hover:opacity-100"
-        >
-          NASIUM
-        </a>
+        <span className="text-lg font-black font-display mb-4">Socials</span>
+        {SOCIALS.map((link) => (
+          <Link
+            key={link.href}
+            className="transition-transform duration-150 hover:-translate-y-0.5 hover:underline no-underline text-sm font-semibold"
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
 
-      <div className="col-span-3 text-center font-semibold text-xs opacity-75 mt-12">Copyright © 2024. All rights reserved. Made with ☕ & ❤️</div>
+      <div className="col-span-3 text-center font-semibold text-xs opacity-75 mt-12">
+        Copyright © 2024. All rights reserved. Made with ☕ & ❤️
+      </div>
     </footer>
   );
 };
