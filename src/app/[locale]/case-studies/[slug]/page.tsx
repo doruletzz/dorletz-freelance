@@ -63,7 +63,7 @@ export default function Article({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section className="min-h-screen w-full px-4 lg:px-12 md:px-12 sm:px-8 flex items-center pb-24 pt-20 md:pt-36 bg-white">
+    <section className="min-h-screen w-full px-2 lg:px-12 md:px-12 sm:px-8 flex items-center pb-24 pt-20 md:pt-36 bg-white">
       <div className="flex gap-12 flex-col sm:flex-row mx-auto">
         <div className="max-w-2xl w-full">
           <script

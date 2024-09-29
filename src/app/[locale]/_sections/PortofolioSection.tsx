@@ -32,7 +32,7 @@ const PortofolioSection = () => {
           variant: "yellow",
         }}
         tag={{ variant: "indigo", text: "Presentation" }}
-        link={{ live: "https://orobuddy.com", case: "/case-studies/orobuddy" }}
+        link={{ live: "https://orobuddy.netlify.app", case: "/case-studies/orobuddy" }}
       />
       <PortofolioCard
         title="Chesspal"

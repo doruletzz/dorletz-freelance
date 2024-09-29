@@ -1,4 +1,5 @@
 import { Button, Card, Chip } from "@/components";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,16 +8,15 @@ const CTA = "Contact";
 const CTASection = () => {
   return (
     <section id="cta" className="xl:mx-72 lg:mx-36 sm:mx-16 mx-2">
-      <Card variant="indigo" className="items-center gap-1.5 p-6 py-10">
-        <Chip variant="yellow">Need My Help?</Chip>
-        <span className="xl:text-5xl text-4xl font-black font-display text-indigo-900 max-w-lg text-center mt-2">
-          Interested? Let&apos;s work together!
+      <Card variant="black" className="group flex-col items-center gap-1.5 p-6 py-16 px-12 mb-4">
+        <span className="xl:text-3xl text-4xl font-display text-center text-white max-w-xl font-medium">
+          Interested? <br/> Let&apos;s work together!
         </span>
-
         <Button
+          variant="primary"
           component={Link}
           href="/contact"
-          className="mt-8"
+          className="rounded-full items-center justify-center flex xl:text-lg text-lg mt-4 font-black text-black bg-white hover:bg-white hover:shadow-none"
         >
           {CTA}
         </Button>

@@ -21,19 +21,23 @@ const HomeSection = () => {
         <Chip variant="red">Seo</Chip>
       </div>
       <div className="relative">
+        <h1 className="xl:text-6xl text-4xl tracking-wide capitalize font-display font-black max-w-2xl text-center leading-none z-20">
+          {HEADING}
+        </h1>
+        
         <Image
           alt="alarm"
           width={200}
           height={200}
           src="/alarm-illustration.png"
-          className="absolute md:-left-24 -left-4 md:-bottom-20 -bottom-12 md:w-32 w-24 -z-0 group-hover:rotate-6 rotate-[-14deg] transition-transform duration-700 group-hover:scale-110 scale-75 ease-in-out "
+          className="absolute md:block hidden md:-left-24 -left-4 md:-bottom-20 -bottom-12 md:w-32 w-24 group-hover:rotate-6 rotate-[-14deg] transition-transform duration-700 group-hover:scale-110 scale-75 ease-in-out "
         />
         <Image
           alt="microphone"
           width={200}
           height={200}
           src="/microphone-illustration.png"
-          className="absolute left-20 -top-32 w-16 group-hover:-rotate-12 transition-transform -z-0 duration-700 group-hover:scale-75 scale-50 ease-in-out rotate-[14deg]"
+          className="absolute md:block hidden left-20 -top-32 w-16 group-hover:-rotate-12 transition-transform duration-700 group-hover:scale-75 scale-50 ease-in-out rotate-[14deg]"
         />
         
         <Image
@@ -41,18 +45,15 @@ const HomeSection = () => {
           width={200}
           height={200}
           src="/notebook-illustration.png"
-          className="absolute md:-right-36 -right-20 -bottom-8 w-52 z-20 group-hover:-rotate-6 rotate-[-36deg] transition-transform duration-700 group-hover:scale-100 scale-90 ease-in-out "
+          className="absolute md:block hidden md:-right-36 -right-20 -bottom-8 w-52 group-hover:-rotate-6 rotate-[-36deg] transition-transform duration-700 group-hover:scale-100 scale-90 ease-in-out "
         />
         
-        <h1 className="xl:text-6xl text-4xl tracking-wide capitalize font-display font-black max-w-2xl text-center leading-none z-10">
-          {HEADING}
-        </h1>
       </div>
       <p className="leading-relaxed font-medium max-w-xl text-center xl:text-lg text-sm mx-4 opacity-75 mt-2">
         {SUBHEADING}
       </p>
 
-      <div className="flex gap-3 xl:mt-10 mt-6">
+      <div className="flex gap-3 xl:mt-10 mt-2">
         <Button
           component={Link}
           href="/contact"

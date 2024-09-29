@@ -53,7 +53,7 @@ const PortofolioCardComponent = ({ image, tag, title, link }: Props) => {
 
       
       <div className="flex absolute left-4 md:bottom-4 md:top-auto top-3">
-        <p className="text-2xl font-display font-black">{title}</p>
+        <p className="text-2xl tracking-wide mix-blend-difference font-display font-black text-white">{title}</p>
       </div>
       <div className="flex gap-2 absolute bottom-4 right-4">
       {!!link?.live && <Button href={link.live} target="_blank" component={Link} variant="secondary">Live</Button>}

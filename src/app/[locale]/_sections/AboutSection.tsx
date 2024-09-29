@@ -31,7 +31,7 @@ const AboutSection = () => {
               <span className="text-xl font-black font-display capitalize">
                 What do I do?
               </span>
-              <p className="text-sm opacity-75 leading-normal max-w-xs drop-shadow-sm">
+              <p className="text-sm opacity-75 leading-normal lg:text-left text-center lg:max-w-xs drop-shadow-sm">
                 I create stunning designs and build high-performance websites.
                 Additionally, I provide market analysis to customize solutions
                 specifically for you, ensuring your website stands out without

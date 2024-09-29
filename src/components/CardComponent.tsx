@@ -6,6 +6,7 @@ type Props<T extends React.ElementType> = {
   className?: string;
   variant:
     | "red"
+    | "black"
     | "green"
     | "blue"
     | "gray"
@@ -21,6 +22,7 @@ type Props<T extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<T>;
 
 const VARIANTS = {
+  black: 'bg-gray-900 text-white font-display hover:shadow-xl hover:shadow-blue-100 hover:bg-blue-800',
   red: "bg-red-100 hover:bg-red-200 border-red-300 text-red-800",
   pink: "bg-pink-100 hover:bg-pink-200 border-pink-300 text-pink-800",
   orange: "bg-orange-100 hover:bg-orange-200 border-orange-300 text-orange-800",
