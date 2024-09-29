@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Card, Checkbox, Chip, Textfield } from "@/components";
+import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
 import React, { MouseEvent, useCallback, useState } from "react";
@@ -18,7 +19,10 @@ type Inputs = {
 
 const Contact = () => {
   const [step, setStep] = useState(0);
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState<{
+    type: string | null;
+    message: string | null;
+  }>({ type: null, message: null });
 
   const {
     register,
@@ -35,7 +39,7 @@ const Contact = () => {
 
         return;
       }
-      setResult("Sending....");
+      // setResult("Sending....");
 
       const formData = new FormData();
       Object.keys(data).forEach((key) =>
@@ -57,23 +61,27 @@ const Contact = () => {
       const res = await response.json();
 
       if (res.success) {
-        setResult("Form Submitted Successfully");
-        // event.target.reset();
+        setResult({
+          message: "All done! I'll get back to you as soon as possible",
+          type: "success",
+        });
+        setStep((prev) => prev + 1);
       } else {
-        console.log("Error", data);
+        setResult({
+          message: "Could not send your data, please try again",
+          type: "error",
+        });
+        setStep((prev) => prev + 1);
       }
-      // alert(JSON.stringify(data));
     },
     [step, errors]
   );
-
-  console.log(JSON.stringify({ ...errors }));
 
   return (
     <main className="flex flex-col xl:gap-20 gap-8 snap-start overflow-hidden max-w-screen-2xl bg-white scroll-smooth mx-auto overflow-x-hidden">
       <section
         id="contact"
-      className="group flex gap-4 flex-col xl:mx-40 mx-2 items-center xl:mt-36 mt-24"
+        className="flex gap-4 flex-col xl:mx-40 mx-2 items-center xl:mt-36 mt-24"
       >
         <Chip variant="green">Contact</Chip>
         <h1 className="text-3xl font-black font-display mb-2 max-w-lg">
@@ -82,10 +90,16 @@ const Contact = () => {
 
         <div className="text-left xl:flex-row flex-col flex gap-4 xl:mt-4 w-full">
           <Card
-            variant="blue"
+            variant={
+              result.type === "success"
+                ? "green"
+                : result.type === "error"
+                ? "gray"
+                : "blue"
+            }
             component={"form"}
             onSubmit={handleSubmit(onSubmit)}
-            className="min-h-[32rem] basis-2/3"
+            className="group min-h-[32rem] basis-2/3"
           >
             <div className="col-span-2">
               <Chip variant="red">Tell Me More</Chip>
@@ -249,8 +263,25 @@ const Contact = () => {
                 </div>
               </>
             )}
+            {step === 3 && (
+              <>
+                <div>
+                  <span className="text-2xl font-black font-display text-indigo-900">
+                    {result.message ??
+                      "All done! I'll get back as soon as possible"}
+                  </span>
+                  <Image
+                    className="group-hover:scale-110 group-hover:-translate-y-5 group-hover:rotate-0 transition-translate duration-700 ease-in-out mt-12 mb-8 rotate-6"
+                    src="/target-illustration.png"
+                    alt="calendar"
+                    width={270}
+                    height={560}
+                  />
+                </div>
+              </>
+            )}
             <div className="ml-auto mt-auto flex gap-2">
-              {step !== 0 && (
+              {step !== 0 && step <= 2 && (
                 <Button
                   variant="text"
                   onClick={(e: MouseEvent<HTMLButtonElement>) => {
@@ -264,14 +295,20 @@ const Contact = () => {
               )}
               <Button
                 variant="primary"
+                disabled={step > 2}
                 style={{ width: step !== 2 ? "8rem" : "14rem" }}
-                className="text-nowrap text-ellipsis overflow-hidden"
+                className={cn(
+                  "text-nowrap text-ellipsis overflow-hidden capitalize",
+                  result.type === "success" &&
+                    "bg-green-800 hover:bg-green-700",
+                  result.type === "error" && "bg-red-800 hover:bg-red-700"
+                )}
                 onClick={(e: MouseEvent<HTMLButtonElement>) => {
                   // e.preventDefault();
                   handleSubmit(onSubmit)(e);
                 }}
               >
-                {step !== 2 ? "Next" : "Let's Work together!"}
+                {step !== 2 ? result.type ?? "Next" : "Let's Work together!"}
               </Button>
             </div>
           </Card>
