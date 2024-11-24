@@ -164,7 +164,7 @@ const Contact = () => {
                     />
                     <Checkbox
                       {...register("service", { required: true })}
-                      id="web-design"
+                      id="web-application"
                       label="Web Application"
                       value="Website App"
                     />
