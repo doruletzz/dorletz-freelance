@@ -3,6 +3,9 @@ import { Hind, Inter, Montserrat, Pontano_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
 
+import { PHProvider } from "../../provider/posthog";
+import dynamic from "next/dynamic";
+
 const hind = Hind({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
@@ -15,8 +18,16 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Doros Doru - Web Design & Web Development",
-  description:"Professional web designer and developer creating high-quality, responsive websites tailored to your needs. Explore my portfolio for web design, development, and SEO-friendly solutions to elevate your online presence. Let's build your dream website!",
+  description:
+    "Professional web designer and developer creating high-quality, responsive websites tailored to your needs. Explore my portfolio for web design, development, and SEO-friendly solutions to elevate your online presence. Let's build your dream website!",
 };
+
+const PostHogPageView = dynamic(
+  () => import("../../components/PostHogPageViewComponent"),
+  {
+    ssr: false,
+  }
+);
 
 export default function RootLayout({
   children,
@@ -30,11 +41,13 @@ export default function RootLayout({
       lang="en"
       className={` ${montserrat.variable} ${hind.className}  scroll-smooth`}
     >
-      <body className={"leading-loose relative"}>
-        <Navbar locale={locale} />
-        {children}
-        <Footer />
-      </body>
+      <PHProvider>
+        <body className={"leading-loose relative"}>
+          <Navbar locale={locale} />
+          {children}
+          <Footer />
+        </body>
+      </PHProvider>
     </html>
   );
 }
