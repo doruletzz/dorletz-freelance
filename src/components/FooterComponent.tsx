@@ -6,10 +6,10 @@ const CTA = "Contact";
 const NAME = "DORU DOROS";
 
 const LINKS = [
-  { href: "/home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "/portofolio", label: "Portofolio" },
   { href: "/contact", label: "Contact" },
-  { href: "/policy", label: "Policy" },
+  // { href: "/policy", label: "Policy" },
 ];
 
 const SOCIALS = [

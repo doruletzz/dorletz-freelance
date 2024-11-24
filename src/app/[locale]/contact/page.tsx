@@ -17,6 +17,16 @@ type Inputs = {
   domain: string;
 };
 
+
+
+const SOCIALS = [
+  { href: "https://x.com/dorletz", label: "Twitter" },
+  { href: "https://github.com/doruletzz", label: "Github" },
+  { href: "https://home.nasium.coach/", label: "Email" },
+  // { href: "/policy", label: "Policy" },
+]
+
+
 const Contact = () => {
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<{
@@ -344,24 +354,13 @@ const Contact = () => {
                 You can Also find me on Social Media!
               </span>
               <div className="grid grid-cols-3 mb-4 mt-4 text-xs gap-4 text-indigo-700 font-display font-bold">
-                <Link
+                {SOCIALS.map(social => (<Link
                   className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5"
-                  href="https://google.com/"
+                  href={social.href}
+                  key={social.label}
                 >
-                  twitter
-                </Link>
-                <Link
-                  className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5 text-center"
-                  href="https://google.com/"
-                >
-                  email
-                </Link>
-                <Link
-                  className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5 text-right"
-                  href="https://github.com/dorletz/"
-                >
-                  github{" "}
-                </Link>
+                  {social.label}
+                </Link>))}
               </div>
             </div>
           </Card>
