@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Doros Doru - Webdesign & Webdevelopment",
+  title: "Doros Doru - Web Design & Web Development",
   description:"Professional web designer and developer creating high-quality, responsive websites tailored to your needs. Explore my portfolio for web design, development, and SEO-friendly solutions to elevate your online presence. Let's build your dream website!",
 };
 
