@@ -7,8 +7,8 @@ const CTA = "Contact";
 const CTASection = () => {
   return (
     <section id="cta" className="xl:mx-72 lg:mx-36 sm:mx-16 mx-2">
-      <Card variant="black" className="group flex-col items-center gap-1.5 p-6 py-16 px-12 mb-6">
-        <span className="xl:text-3xl text-4xl font-display text-center text-white max-w-xl font-medium">
+      <Card variant="black" className="group flex-col items-center gap-1.5 p-6 md:py-16 md:px-12 mb-6">
+        <span className="xl:text-3xl text-3xl leading-normal font-display text-center text-white max-w-xl font-medium">
           Interested? <br/> Let&apos;s work together!
         </span>
         <Button

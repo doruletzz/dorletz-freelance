@@ -49,7 +49,7 @@ const CardComponent = <T extends React.ElementType>({
     <OverridenComponent
       style={style}
       className={cn(
-        `sm:p-6 p-4 flex flex-col gap-1.5 hover:-translate-y-2 border transition-translate overflow-hidden duration-700 ease-in-out rounded-3xl  ${VARIANTS[variant]}`,
+        `sm:p-6 p-4 flex flex-col gap-1.5 hover:-translate-y-2 border transition-[transform_background] overflow-hidden duration-700 ease-in-out rounded-3xl  ${VARIANTS[variant]}`,
         className
       )}
       {...otherProps}

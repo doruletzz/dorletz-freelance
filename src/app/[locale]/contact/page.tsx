@@ -95,6 +95,10 @@ const Contact = () => {
                 ? "green"
                 : result.type === "error"
                 ? "gray"
+                : step === 0
+                ? "indigo"
+                : step === 1
+                ? "orange"
                 : "blue"
             }
             component={"form"}
@@ -116,17 +120,24 @@ const Contact = () => {
                       type="radio"
                       name="goal"
                       id="from-scratch"
-                      label="Am nevoie de un website de la zero"
+                      label="I need a website from scratch"
                       value="Website from scratch"
                     />
-
                     <Checkbox
                       {...register("goal", { required: "This is Required" })}
                       type="radio"
                       name="goal"
                       id="revamp"
-                      label="Am nevoie de un website revamp"
+                      label="I need a website revamp"
                       value="Website revamp"
+                    />
+                    <Checkbox
+                      {...register("goal", { required: "This is Required" })}
+                      type="radio"
+                      name="goal"
+                      id="revamp"
+                      label="I need a website application"
+                      value="Web app"
                     />
                   </div>
                   {errors?.goal && (
@@ -150,6 +161,12 @@ const Contact = () => {
                       id="web-design"
                       label="Web Design"
                       value="Website Design"
+                    />
+                    <Checkbox
+                      {...register("service", { required: true })}
+                      id="web-design"
+                      label="Web Application"
+                      value="Website App"
                     />
                     <Checkbox
                       {...register("service", { required: true })}
@@ -180,7 +197,7 @@ const Contact = () => {
                       {...register("scale", { required: true })}
                       name="variant"
                       id="variant-three-pages"
-                      label="Am nevoie de 3 pagini (e.g. Home, About, Contact Us)"
+                      label="I need 3 pages (e.g., Home, About, Contact Us)"
                       value="Variant 3 Pages"
                     />
                     <Checkbox
@@ -188,7 +205,7 @@ const Contact = () => {
                       {...register("scale", { required: true })}
                       name="variant"
                       id="variant-ten-pages"
-                      label="Am nevoie de 10+ pagini pentru produse/servicii"
+                      label="I need 10+ pages for products/services"
                       value="Variant 10+ Pages"
                     />
                   </div>
@@ -341,7 +358,7 @@ const Contact = () => {
                 </Link>
                 <Link
                   className="opacity-75 w-auto hover:opacity-100 hover:underline hover:-translate-y-0.5 text-right"
-                  href="https://google.com/"
+                  href="https://github.com/dorletz/"
                 >
                   github{" "}
                 </Link>

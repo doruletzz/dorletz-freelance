@@ -10,7 +10,7 @@ type Props<T extends React.ElementType> = {
 
 const VARIANTS = {
   primary:
-    "bg-gray-900 text-white font-display hover:shadow-xl hover:shadow-blue-100 hover:bg-blue-800",
+    "bg-gray-900 text-white font-display hover:shadow-md hover:bg-blue-800",
   secondary:
     "text-gray-900 border border-gray-700 font-display bg-gray-100 bg-opacity-75 hover:bg-opacity-100 backdrop-blur-sm",
   text: "bg-none",

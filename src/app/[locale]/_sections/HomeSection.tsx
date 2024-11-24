@@ -13,7 +13,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="group flex gap-4 flex-col xl:mx-72 mx-2 items-center xl:mt-48 mt-36"
+      className="group flex gap-4 flex-col xl:mx-72 mx-2 items-center xl:mt-48 md:mt-36 mt-28"
     >
       <div className="text-xs font-bold flex gap-3 xl:-mb-1.5 mb-0 z-10">
         <Chip variant="blue">Development</Chip>

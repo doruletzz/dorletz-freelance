@@ -77,7 +77,7 @@ const TechnologySection = () => {
 
         <Card
           variant="purple"
-          className="xl:max-h-96 group xl:col-span-2 col-span-1"
+          className="xl:max-h-96 group xl:col-span-2 col-span-2"
         >
           <Chip variant="green">{CARD_CHIP_2}</Chip>
           <span className="text-lg font-black font-display text-indigo-800">
@@ -104,7 +104,7 @@ const TechnologySection = () => {
 
         <Card
           variant="emerald"
-          className="xl:max-h-96 group xl:col-span-2 col-span-1"
+          className="xl:max-h-96 group xl:col-span-2 col-span-2"
         >
           <Chip variant="red">{CARD_CHIP_3}</Chip>
           <span className="text-lg font-black font-display text-teal-800">
