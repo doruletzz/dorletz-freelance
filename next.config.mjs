@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
+  transpilePackages: ["next-mdx-remote"],
   output: 'standalone'
   // i18n: {
   //   locales: ["en", "ro"],
