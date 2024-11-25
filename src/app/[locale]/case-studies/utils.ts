@@ -53,7 +53,7 @@ function getMDXData(dir: fs.PathLike) {
 }
 
 export function getArticlePosts() {
-  return getMDXData(path.join(process.cwd(), "src", "app", "[locale]" ,"case-studies", "posts"));
+  return getMDXData(path.join(process.cwd(), "public", "posts"));
 }
 
 export function formatDate(date: string, includeRelative = false) {
