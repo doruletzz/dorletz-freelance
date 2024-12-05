@@ -84,7 +84,7 @@ const PortofolioSection = () => {
           }}
           variant="secondary"
           className={cn(
-            "h-fit absolute left-36 top-1/2 shadow-xl",
+            "md:flex hidden h-fit absolute left-36 top-1/2 shadow-xl",
             showLeftButton ? "opacity-100" : "opacity-0 pointer-events-none"
           )}
         >
@@ -105,7 +105,7 @@ const PortofolioSection = () => {
           }}
           variant="secondary"
           className={cn(
-            "h-fit absolute right-36 top-1/2 shadow-xl",
+            "md:flex hidden h-fit absolute right-36 top-1/2 shadow-xl",
             showRightButton ? "opacity-100" : "opacity-0 pointer-events-none"
           )}
         >
