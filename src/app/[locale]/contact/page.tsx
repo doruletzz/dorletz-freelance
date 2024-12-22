@@ -145,7 +145,7 @@ const Contact = () => {
                       {...register("goal", { required: "This is Required" })}
                       type="radio"
                       name="goal"
-                      id="revamp"
+                      id="web-application"
                       label="I need a website application"
                       value="Web app"
                     />
