@@ -4,7 +4,14 @@ import { Chip } from "@/components";
 import FAQSection from "../_sections/FAQSection";
 import CTASection from "../_sections/CTASection";
 
-const PortofolioPage = () => {
+type Props = {
+  params: {
+    locale: string;
+  };
+};
+
+const PortofolioPage =({ params }: Props) => {
+  const { locale } = params;
   return (
     <div className="min-h-screen w-full overflow-hidden ">
       <div className="xl:mt-32 mt-16 flex flex-col gap-2 items-center text-center xl:px-72 lg:px-36 sm:px-16 px-2 lg:-mb-12">
@@ -13,10 +20,10 @@ const PortofolioPage = () => {
           Check out some of my work!
         </h1>
       </div>
-      <PortofolioSection />
-      <div className="mb-24" />
-      <FAQSection />
-      <CTASection />
+      <PortofolioSection locale={locale} />
+      <div className="mb-24"></div>
+      <FAQSection locale={locale} />
+      <CTASection locale={locale} />
     </div>
   );
 };
