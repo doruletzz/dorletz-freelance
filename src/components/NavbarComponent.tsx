@@ -1,22 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card } from ".";
 import { locales } from "@/utils/locales";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import useScrollPosition from "@/hooks/useScrollPostition";
+import { usePathname } from "next/navigation";
 
-const CTA = "Contact";
 const NAME = "DORU DOROS";
 
 type Props = {
   locale: string;
 };
 
+const getContentByLocale = (locale: string) => {
+  const contentData = {
+    "en-US": {
+      cta: "Contact",
+    },
+    "ro-RO": {
+      cta: "Contacteaza-ma",
+    },
+  };
+
+  return (
+    contentData[locale as keyof typeof contentData] || contentData["en-US"]
+  );
+};
+
 const NavbarComponent = ({ locale }: Props) => {
+  const pathName = usePathname();
+  const pathWithoutLocale = pathName.split("/").slice(2).join("/");
+  const { cta } = getContentByLocale(locale);
+
   const { scrollPosition, isScrolling } = useScrollPosition();
+  const [showLanguage, setShowLanguage] = useState(false);
 
   return (
     <nav
@@ -35,56 +54,63 @@ const NavbarComponent = ({ locale }: Props) => {
         >
           {NAME}
         </Link>
-        {/* <Link className="md:block hidden" href="/#home">
-        HOME
-      </Link>
-      <Link className="md:block hidden" href="/#about">
-        ABOUT
-      </Link> */}
-        {/* <button
-        onClick={() => setShowLanguage((prev) => !prev)}
-        style={{
-          backdropFilter: showLanguage ? "" : "none",
-          background: showLanguage ? "" : "none",
-          boxShadow: showLanguage ? "" : "none",
-        }}
-        className="hover:-translate-y-0.5 sm:flex hidden uppercase ml-auto relative transition-all duration-300 ease-in-out bg-gray-100 shadow-xl bg-opacity-40 backdrop-blur-sm rounded-2xl px-6 py-3.5 -mr-4"
-      >
-        <span>{locale.split("-")[0]}</span>
 
-        <Card
-          style={{
-            pointerEvents: showLanguage ? "auto" : "none",
-            opacity: showLanguage ? "" : "0",
-            boxShadow: showLanguage ? "" : "none",
-          }}
-          variant="gray"
-          className="hover:-translate-y-0 transition-all mt-6 flex rounded-xl flex-col gap-4 absolute top-full p-3 left-1/2 shadow-2xl -translate-x-1/2 bg-gray-100 bg-opacity-75 backdrop-blur-xl"
-        >
-          {locales.map((locale) => (
-            <Link
+        <div className="flex gap-6">
+          <button
+            onClick={() => setShowLanguage((prev) => !prev)}
+            style={{
+              backdropFilter: showLanguage ? "" : "none",
+              background: showLanguage ? "" : "none",
+              boxShadow: showLanguage ? "" : "none",
+            }}
+            className="hover:-translate-y-0.5 gap-2 items-center sm:flex hidden uppercase ml-auto relative transition-all duration-300 ease-in-out bg-gray-100 shadow-xl bg-opacity-40 backdrop-blur-sm font-black rounded-full px-6 py-2.5 -mr-4"
+          >
+            <Image
               key={locale}
-              className="flex gap-2 uppercase hover:underline px-4 py-2 m-1 rounded-lg hover:bg-gray-200"
-              href={`${locale}/`}
+              src={`/${locale}-flag-icon.png`}
+              className="rounded-full"
+              width={16}
+              height={16}
+              alt="flag"
+            />
+            <p className="my-auto h-full translate-y-[0.15rem]">
+              {locale.split("-")[0]}
+            </p>
+
+            <Card
+              style={{
+                pointerEvents: showLanguage ? "auto" : "none",
+                opacity: showLanguage ? "" : "0",
+                boxShadow: showLanguage ? "" : "none",
+              }}
+              variant="gray"
+              className="hover:-translate-y-0 transition-all mt-6 flex rounded-3xl flex-col gap-4 absolute top-full p-2 left-1/2 shadow-2xl -translate-x-1/2 bg-gray-100 bg-opacity-75 backdrop-blur-xl"
             >
-              <Image
-                key={locale}
-                src={`/${locale}-flag-icon.png`}
-                className="rounded-full"
-                width={16}
-                height={16}
-                alt="flag"
-              />
+              {locales.map((locale) => (
+                <Link
+                  key={locale}
+                  className="flex gap-2 uppercase hover:underline px-4 py-2 m-1 rounded-lg hover:bg-gray-200"
+                  href={`/${locale}/${pathWithoutLocale}`}
+                >
+                  <Image
+                    key={locale}
+                    src={`/${locale}-flag-icon.png`}
+                    className="rounded-full"
+                    width={16}
+                    height={16}
+                    alt="flag"
+                  />
 
-              <span className="mr-4">{locale.split("-")[0]}</span>
-            </Link>
-          ))}
-        </Card>
-      </button> */}
+                  <span className="mr-4">{locale.split("-")[0]}</span>
+                </Link>
+              ))}
+            </Card>
+          </button>
 
-        <Button component={"a"} href="/contact" className="ml-auto">
-          {CTA}
-        </Button>
+          <Button component={"a"} href="/contact" className="ml-auto">
+            {cta}
+          </Button>
+        </div>
       </div>
     </nav>
   );

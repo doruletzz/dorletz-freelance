@@ -7,7 +7,31 @@ import React, { useEffect, useRef, useState } from "react";
 
 const SEE_ALL = "See all";
 
-const PortofolioSection = () => {
+// Mock function to get content by locale
+const getContentByLocale = (locale: string) => {
+  const contentData = {
+    "en-US": {
+      application: "Application",
+      presentation: "Presentation",
+    },
+    "ro-RO": {
+      application: "Applicatie",
+      presentation: "Prezentare",
+    },
+  };
+
+  return (
+    contentData[locale as keyof typeof contentData] || contentData["en-US"]
+  ); // Default to English if locale is not found
+};
+
+type Props = {
+  locale: string;
+};
+
+const PortofolioSection = ({ locale }: Props) => {
+  const { application, presentation } = getContentByLocale(locale);
+
   const ref = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(false);
@@ -16,7 +40,8 @@ const PortofolioSection = () => {
     const scrollContainer = ref.current;
     if (scrollContainer) {
       const handleScroll = () => {
-        const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        const maxScrollLeft =
+          scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
         setShowLeftButton(scrollContainer.scrollLeft > 0);
         setShowRightButton(scrollContainer.scrollLeft < maxScrollLeft);
@@ -43,7 +68,7 @@ const PortofolioSection = () => {
             alt: "nasium-home",
             variant: "blue",
           }}
-          tag={{ variant: "lime", text: "Application" }}
+          tag={{ variant: "lime", text: application }}
           link={{
             live: "https://home.nasium.coach",
             case: "/case-studies/nasium",
@@ -56,7 +81,7 @@ const PortofolioSection = () => {
             alt: "orobuddy-home",
             variant: "yellow",
           }}
-          tag={{ variant: "indigo", text: "Presentation" }}
+          tag={{ variant: "indigo", text: presentation }}
           link={{
             live: "https://orobuddy.netlify.app",
             case: "/case-studies/orobuddy",
@@ -69,7 +94,7 @@ const PortofolioSection = () => {
             alt: "chesspal-home",
             variant: "lime",
           }}
-          tag={{ variant: "yellow", text: "Application" }}
+          tag={{ variant: "yellow", text: application }}
           link={{
             live: "https://chesspal.net",
             case: "/case-studies/chesspal",

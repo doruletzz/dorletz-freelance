@@ -8,8 +8,6 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  console.log("pn:", pathname, pathnameHasLocale)
-
   if (pathnameHasLocale) return;
 
   // Redirect if there is no locale

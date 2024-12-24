@@ -7,7 +7,6 @@ export const languages = new Negotiator({ headers }).languages();
 export const locales = ["en-US", "ro-RO"];
 export const defaultLocale = "en-US";
 
-
 // Get the preferred locale, similar to the above or using a library
 export function getLocale(request: NextRequest) {
     return match(languages, locales, defaultLocale); // -> 'en-US'

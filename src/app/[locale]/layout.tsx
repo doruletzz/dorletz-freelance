@@ -5,6 +5,11 @@ import { Footer, Navbar } from "@/components";
 
 import { PHProvider } from "../../provider/posthog";
 import dynamic from "next/dynamic";
+import { useReducer } from "react";
+import { appReducer } from "@/provider/app/reducer";
+import { initialAppState } from "@/provider/app/state";
+import { AppContext } from "@/provider/app/context";
+import AppProvider from "@/provider/app";
 
 const hind = Hind({
   weight: ["400", "500", "700"],
@@ -42,11 +47,13 @@ export default function RootLayout({
       className={` ${montserrat.variable} ${hind.className}  scroll-smooth`}
     >
       <PHProvider>
-        <body className={"leading-loose relative"}>
-          <Navbar locale={locale} />
-          {children}
-          <Footer />
-        </body>
+        <AppProvider>
+          <body className={"leading-loose relative"}>
+            <Navbar locale={locale} />
+            {children}
+            <Footer />
+          </body>
+        </AppProvider>
       </PHProvider>
     </html>
   );

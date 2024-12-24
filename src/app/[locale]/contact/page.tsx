@@ -44,7 +44,6 @@ const Contact = () => {
   const onSubmit: SubmitHandler<Inputs> = useCallback(
     async (data) => {
       if (step !== 2) {
-        console.log(data, errors);
         setStep((prev) => prev + 1);
 
         return;
@@ -84,7 +83,7 @@ const Contact = () => {
         setStep((prev) => prev + 1);
       }
     },
-    [step, errors]
+    [step]
   );
 
   return (

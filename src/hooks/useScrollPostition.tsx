@@ -22,7 +22,7 @@ const useScrollPosition = () => {
       window.addEventListener("scroll", handleNavigation);
       // updatePosition();
       return () => window.removeEventListener("scroll", handleNavigation);
-    }, [handleNavigation]);
+    }, [handleNavigation, scrollPosition, setIsScrolling]);
   
     return {scrollPosition, isScrolling};
   };
