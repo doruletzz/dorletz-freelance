@@ -76,7 +76,7 @@ const PackageSection = ({ locale }: Props) => {
           <span className="text-lg font-display font-black text-orange-900">
             {cardTitle1}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-orange-800">
+          <p className="text-sm opacity-90 leading-normal text-orange-800">
             {cardText1}
           </p>
           <Image
@@ -98,7 +98,7 @@ const PackageSection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-yellow-800">
             {cardTitle2}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-yellow-900">
+          <p className="text-sm opacity-90 leading-normal text-yellow-900">
             {cardText2}
           </p>
           <Image
@@ -121,7 +121,7 @@ const PackageSection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-sky-800">
             {cardTitle3}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             {cardText3}
           </p>
           <Image

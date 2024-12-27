@@ -26,7 +26,7 @@ const BlogSection = () => {
             #1
           </span>
           <span className="text-lg font-black text-orange-900">Research</span>
-          <p className="text-sm opacity-75 leading-normal text-orange-800">
+          <p className="text-sm opacity-90 leading-normal text-orange-800">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam
           </p>
@@ -49,7 +49,7 @@ const BlogSection = () => {
             #2
           </span>
           <span className="text-lg font-black text-yellow-800">Design</span>
-          <p className="text-sm opacity-75 leading-normal text-yellow-900">
+          <p className="text-sm opacity-90 leading-normal text-yellow-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam...
           </p>
@@ -73,7 +73,7 @@ const BlogSection = () => {
             #3
           </span>
           <span className="text-lg font-black text-sky-800">Develop</span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam
           </p>
@@ -96,7 +96,7 @@ const BlogSection = () => {
             #3
           </span>
           <span className="text-lg font-black text-sky-800">Develop</span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam
           </p>
@@ -119,7 +119,7 @@ const BlogSection = () => {
             #3
           </span>
           <span className="text-lg font-black text-sky-800">Develop</span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam
           </p>
@@ -142,7 +142,7 @@ const BlogSection = () => {
             #3
           </span>
           <span className="text-lg font-black text-sky-800">Develop</span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta id,
             cupiditate ab eum dolor quisquam ea fuga suscipit ullam
           </p>

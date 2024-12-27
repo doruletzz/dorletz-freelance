@@ -104,7 +104,7 @@ const TechnologySection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-emerald-900">
             {cardTitle1}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-emerald-900 max-w-md">
+          <p className="text-sm opacity-90 leading-normal text-emerald-900 max-w-md">
             {cardContent1}
           </p>
           <div className="flex justify-between mt-6">
@@ -140,7 +140,7 @@ const TechnologySection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-indigo-800">
             {cardTitle2}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-indigo-900">
+          <p className="text-sm opacity-90 leading-normal text-indigo-900">
             {cardContent2}
           </p>
           <Image
@@ -167,7 +167,7 @@ const TechnologySection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-teal-800">
             {cardTitle3}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-teal-900">
+          <p className="text-sm opacity-90 leading-normal text-teal-900">
             {cardContent3}
           </p>
 
@@ -195,7 +195,7 @@ const TechnologySection = ({ locale }: Props) => {
           <span className="text-lg font-black font-display text-yellow-900">
             {cardTitle4}
           </span>
-          <p className="text-sm opacity-75 leading-normal text-yellow-800 max-w-md">
+          <p className="text-sm opacity-90 leading-normal text-yellow-800 max-w-md">
             {cardContent4}
           </p>
 

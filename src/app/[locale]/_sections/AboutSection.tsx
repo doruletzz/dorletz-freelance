@@ -70,7 +70,7 @@ const AboutSection = ({ locale }: Props) => {
               <span className="text-xl font-black font-display capitalize">
                 {cardTitle1}
               </span>
-              <p className="text-sm opacity-75 leading-normal lg:text-left text-center lg:max-w-xs drop-shadow-sm">
+              <p className="text-sm opacity-90 leading-normal lg:text-left text-center lg:max-w-xs drop-shadow-sm">
                 {cardContent1}
               </p>
               <a
