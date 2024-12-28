@@ -22,7 +22,7 @@ type Inputs = {
 const SOCIALS = [
   { href: "https://x.com/dorletz", label: "Twitter" },
   { href: "https://github.com/doruletzz", label: "Github" },
-  { href: "https://home.nasium.coach/", label: "Email" },
+  { href: "mailto:dorosdorulucian@gmail.com?subject=Hello&body=I%20would%20like%20to%20connect%20with%20you.", label: "Email" },
   // { href: "/policy", label: "Policy" },
 ]
 
